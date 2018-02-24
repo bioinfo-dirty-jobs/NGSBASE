@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      STAR-FUSION configuration &middot; Training Course on Fusion transcript detection
+    
+  </title>
+
+  <!-- CSS -->
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/training_fusion/public/css/poole.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/syntax.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/lanyon.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/training_fusion/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/training_fusion/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="/training_fusion/js/toc.js"></script>
+</head>
+
+
+  <body class="theme-base-07">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Fusion training</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/training_fusion/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/01.welcome/">Welcome and introduction</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">General installation for Fusion detection tutorial</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/03.jaffa/">Jaffa configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/04.jaffa.tutorial/">Tutorial  jaffa program</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="http://localhost:4000/lectures/05.starfusion/">STAR-FUSION configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.starfusion.tutorial/">Tutorial star-fusion</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/07.exploration/">Hand on on exploration results</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/08.fusioncather/">Fusioncatcher</a>
+        
+      
+    
+
+    <!--<a class="sidebar-nav-item" href="/archive/v1.2.zip">Download</a>-->
+    <a class="sidebar-nav-item" href="https://bioinfo-dirty-jobs.github.io/training_fusion/">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.2</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://localhost:4000/" title="Home">Training Course on Fusion transcript detection</a>
+            <!--<p></p><small>STAR-FUSION configuration</small></p>-->
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">STAR-FUSION configuration</h1>
+  <p class="note">STAR-FUSION</p>
+  
+    <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+  
+  <h1 id="star-fusion">STAR-FUSION</h1>
+
+<ul>
+  <li><a href="">Introduction</a></li>
+  <li><a href="">Installation </a></li>
+  <li><a href="">Data Resources Required</a></li>
+  <li><a href="">Ways to run STAR-FUSION</a></li>
+</ul>
+
+<p>======</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>STAR-Fusion is a component of the Trinity Cancer Transcriptome Analysis Toolkit (CTAT). STAR-Fusion uses the STAR aligner to identify candidate fusion transcripts supported by Illumina reads. STAR-Fusion further processes the output generated by the STAR aligner to map junction reads and spanning reads to a reference annotation set <a href="http://biorxiv.org/content/early/2017/03/24/120295">article</a>.
+This program are really fast, however need at least 40G RAM.
+During this  year after pubblish the paper of this  tool the author develope other important modules  to annotate to inspect and validate fusion. During this tutorial we don’t have time to see this feature.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Exist many way to install STAR-Fusion. You can use conda recipes or you can install localy.The last version of STAR-FUSION have  some interesting feature  and imporv the bility to filter the fusion.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> git clone --recursive https://github.com/STAR-Fusion/STAR-Fusion.git
+
+
+
+</code></pre>
+</div>
+
+<h3 id="tools-required">Tools Required:</h3>
+
+<ul>
+  <li>STAR <a href="https://github.com/alexdobin/STAR">https://github.com/alexdobin/STAR</a></li>
+  <li>possibly some non-standard Perl modules - see below:</li>
+</ul>
+
+<p>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>   A typical perl module installation may involve:
+   perl -MCPAN -e shell
+   install DB_File
+   install URI::Escape
+   install Set::IntervalTree
+   install Carp::Assert
+   install JSON::XS
+</code></pre>
+</div>
+
+<p><a name="ComputeRequirements"></a></p>
+<h3 id="computing--hardware-requirements">Computing / Hardware requirements</h3>
+
+<p>If you’re planning to run STAR to align reads to the human genome, then you’ll need ~30G RAM.   If you’ve already run STAR and are just planning on running STAR-Fusion given the existing STAR outputs, then modest resources are required and it should run on any commodity hardware.</p>
+
+<h2 id="data-resources-required">Data Resources Required:</h2>
+
+<p>A reference genome and corresponding protein-coding gene annotation set, including blast-matching gene pairs must be provided to STAR-Fusion. We provide several alternative resources for human fusion transcript detection depending on whether you want to use GRCh37 or GRCh38 reference human genomes and corresponding Gencode annotation sets. Options are available here: https://data.broadinstitute.org/Trinity/CTAT_RESOURCE_LIB/, so choose one, and below we refer to it as ‘CTAT_resource_lib.tar.gz’. The gene annotations in each case are restricted to the protein-coding and lincRNA transcripts.</p>
+
+<p>If you’re looking to apply STAR-Fusion using a different target, you’ll need to generate the required resources as described by our FusionFilter resource builder. FusionFilter comes included in the STAR-Fusion software.</p>
+
+<h3 id="preparing-the-genome-resource-lib">Preparing the genome resource lib</h3>
+
+<p>If you downloaded the large (30G) ‘plug-n-play’ resource lib, then just untar/gz the archive and use it directly.</p>
+
+<h2 id="ways-to-run-star-fusion">Ways to run STAR-FUSION</h2>
+
+<p>Running STAR on paired end read fastqs can be performed in a single step.  Set the prefix argument <code class="highlighter-rouge">--outFileNamePrefix</code> to specify the location of the output.</p>
+
+<p>Given paried-end of FASTQ files, run  STAR-Fusion like so:</p>
+
+<pre><code class="language-{bash}">
+STAR-Fusion --genome_lib_dir /path/to/your/CTAT_resource_lib \
+             --left_fq reads_1.fq \
+             --right_fq reads_2.fq \
+             --output_dir star_fusion_outdir
+</code></pre>
+<p>If you have single-end FASTQ files, just use the –left_fq parameter:</p>
+
+<pre><code class="language-{bash}"> STAR-Fusion --genome_lib_dir /path/to/your/CTAT_resource_lib \
+             --left_fq reads_1.fq \ 
+             --output_dir star_fusion_outdir
+
+
+</code></pre>
+
+<p>Also other programs are able to  detect fusion from  single-end. One of main problems are the lenght of the reads. It is important to have relatively long read (ex. at least 100 bp) otherwise you will be underpowerred for detecting fusion transcripts</p>
+
+<h3 id="kickstart-mode-run-star-yourself-and--the-running-starfusion-using-eisting-ouputs">Kickstart mode: run STAR yourself, and  the running STAR–Fusion using eisting ouputs</h3>
+
+<p>It’s not always the case that you want to have STAR-Fusion run STAR directly, as you may have already run STAR earlier on, or prefer to run STAR separately to use the outputs in other processes such as for expression estimates or variant detection.
+Parameters that we recommend for running STAR as part of STAR-Fusion are as follows:</p>
+
+<pre><code class="language-{bash}">STAR --genomeDir ${star_index_dir} \                                             
+      --readFilesIn ${left_fq_filename} ${right_fq_filename} \
+      --twopassMode Basic \                                   
+      --outReadsUnmapped None \                               
+      --chimSegmentMin 12 \                                  
+      --chimJunctionOverhangMin 12 \                         
+      --alignSJDBoverhangMin 10 \                            
+      --alignMatesGapMax 100000 \                            
+      --alignIntronMax 100000 \                              
+      --chimSegmentReadGapMax parameter 3 \                  
+      --alignSJstitchMismatchNmax 5 -1 5 5 \
+      --runThreadN ${THREAD_COUNT} \                           
+      --limitBAMsortRAM 31532137230 \                        
+      --outSAMtype BAM SortedByCoordinate 
+
+</code></pre>
+<p>This will (in part) generate a file called ‘Chimeric.out.junction’, which is used by STAR-Fusion like so:</p>
+
+<pre><code class="language-{bash}">STAR-Fusion --genome_lib_dir /path/to/your/CTAT_resource_lib \
+             -J Chimeric.out.junction \
+             --output_dir star_fusion_outdir --left_fq ${left_fq_filename} --right_fq ${right_fq_filename}
+
+</code></pre>
+
+<p>FusionInpector and Fusionannotate are very importnt for filter the fusion. 
+<img src="http://localhost:4000/images/FusionInspectorsvg.png" width="600" /></p>
+
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  <!--<footer>
+        <p>This project is maintained by  Maurizio Polano<br/></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+-->
+  </body>
+</html>

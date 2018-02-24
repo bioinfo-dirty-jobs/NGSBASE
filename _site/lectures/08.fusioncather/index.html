@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Fusioncatcher &middot; Training Course on Fusion transcript detection
+    
+  </title>
+
+  <!-- CSS -->
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/training_fusion/public/css/poole.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/syntax.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/lanyon.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/training_fusion/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/training_fusion/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="/training_fusion/js/toc.js"></script>
+</head>
+
+
+  <body class="theme-base-07">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Fusion training</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/training_fusion/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/01.welcome/">Welcome and introduction</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">General installation for Fusion detection tutorial</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/03.jaffa/">Jaffa configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/04.jaffa.tutorial/">Tutorial  jaffa program</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/05.starfusion/">STAR-FUSION configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.starfusion.tutorial/">Tutorial star-fusion</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/07.exploration/">Hand on on exploration results</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="http://localhost:4000/lectures/08.fusioncather/">Fusioncatcher</a>
+        
+      
+    
+
+    <!--<a class="sidebar-nav-item" href="/archive/v1.2.zip">Download</a>-->
+    <a class="sidebar-nav-item" href="https://bioinfo-dirty-jobs.github.io/training_fusion/">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.2</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://localhost:4000/" title="Home">Training Course on Fusion transcript detection</a>
+            <!--<p></p><small>Fusioncatcher</small></p>-->
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Fusioncatcher</h1>
+  <p class="note">Agenda, resources and other useful information</p>
+  
+    <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+  
+  <h1 id="table-of-contents">Table of Contents</h1>
+<ol>
+  <li><a href="#1---introduction">Introduction</a></li>
+  <li><a href="#2---hardware-requirements-and-dependencies">Hardware requirements and dependencies</a></li>
+  <li><a href="#3---fusioncatcher-in-scientific-articles">FusionCatcher in scientific articles</a></li>
+  <li><a href="#4---installation-and-usage-examples">Installation and usage examples</a></li>
+  <li><a href="#5---quick-installation">Quick installation</a></li>
+  <li><a href="#6---usage">Usage</a></li>
+  <li><a href="#7---aligners">Aligners</a></li>
+  <li><a href="#8---command-line-options">Command line options</a></li>
+  <li><a href="#9---methods">Methods</a></li>
+  <li><a href="#10---comparisons-to-other-tools">Comparisons to other tools</a></li>
+  <li><a href="#11---license">License</a></li>
+  <li><a href="#12---citing">Citing</a></li>
+  <li><a href="#13---reporting-bugs">Reporting bugs</a></li>
+</ol>
+
+<hr />
+
+<h1 id="1---introduction">1 - INTRODUCTION</h1>
+
+<p><em>FusionCatcher</em> searchers for <strong>somatic</strong> novel/known <strong>fusion genes</strong>, <strong>translocations</strong> and/or <strong>chimeras</strong> in RNA-seq data (stranded/unstranded  <strong>paired-end/single-end</strong> reads FASTQ files produced by Illumina next-generation sequencing platforms like Illumina Solexa/<code class="highlighter-rouge">HiSeq</code>/<code class="highlighter-rouge">NextSeq</code>/<code class="highlighter-rouge">MiSeq</code>/<code class="highlighter-rouge">MiniSeq</code>) from <em>diseased</em> samples. Unfortunately we don’t have resurce and time to discus this amazyng program. It was the first pogram for somatic fusion with  biological annotation and one of major contribute for the develope of STAR-Fusion.</p>
+
+<p>The aims of <em>FusionCatcher</em> are:</p>
+<ul>
+  <li>very good detection rate for finding candidate <strong>somatic fusion genes</strong> (see <a href="http://en.wikipedia.org/wiki/Mutation#Somatic_mutations">somatic mutations</a>; using a matched <strong>normal</strong> sample is optional; several databases of known fusion genes found in healthy samples are used as a list of known false positives; biological knowledge is used, like for example gene fusion between a gene and its pseudogene is filtered out),</li>
+  <li>very good RT-PCR validation rate of found candidate somatic fusion genes (this is very important for us),</li>
+  <li>very easy to use (i.e. no <em>a priori</em> knowledge of bioinformatic databases and bioinformatics is needed in order to run <em>FusionCatcher</em> BUT Linux/Unix knowledge is needed; it allows a very high level of control for expert users),</li>
+  <li>to be as automatic as possible (i.e. the <em>FusionCatcher</em> will choose automatically the best parameters in order to find candidate somatic fusion genes, e.g. finding automatically the adapters, quality trimming of reads, building the exon-exon junctions automatically based on the length of the reads given as input, etc. while giving also full control to expert users) while providing the best possible detection rate for finding somatic fusion genes (with a very low rate of false positives but a very good sensitivity).</li>
+</ul>
+
+<h2 id="output-data">6.2 - Output data</h2>
+
+<p><em>FusionCatcher</em> produces a list of candidate fusion genes using the given input data. It is recommended that this list of candidate of fusion genes is further validated in the wet-lab using for example PCR/FISH experiments.</p>
+
+<p>The output files are:</p>
+<ul>
+  <li><code class="highlighter-rouge">final-list_candidate_fusion_genes.txt</code> - final list with the newly found candidates fusion genes (it contains the fusion genes with their junction sequence and points); Starting with version 0.99.3c the coordinates of fusion genes are given here for human genome using <strong>only</strong> assembly <strong>hg38/GRCh38</strong>; See <a href="#output-data">Table 1</a> for columns’ descriptions;</li>
+  <li><code class="highlighter-rouge">final-list_candidate_fusion_genes.GRCh37.txt</code> - final list with the newly found candidates fusion genes (it contains the fusion genes with their junction sequence and points); Starting with version 0.99.3d the coordinates of fusion genes are given here for human genome using assembly <strong>hg19/GRCh37</strong>; See <a href="#output-data">Table 1</a> for columns’ descriptions;</li>
+  <li><code class="highlighter-rouge">summary_candidate_fusions.txt</code> - contains an executive summary (meant to be read directly by the medical doctors or biologist) of candidate fusion genes found;</li>
+  <li><code class="highlighter-rouge">final-list_candidate_fusion_genes.caption.md.txt</code> - explains in detail the labels found in column <code class="highlighter-rouge">Fusion_description</code> of files <code class="highlighter-rouge">final-list_candidate_fusion_genes.txt</code> and <code class="highlighter-rouge">final-list_candidate_fusion_genes.GRCh37.txt</code>;</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BOWTIE.zip</code> - sequences of short reads supporting the newly found candidate fusion genes found using only and exclusively the Bowtie aligner;</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BLAT.zip</code> - sequences of short reads supporting the newly found candidate fusion genes found using Bowtie and Blat aligners;</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_STAR.zip</code> - sequences of short reads supporting the newly found candidate fusion genes found using Bowtie and STAR aligners;</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BOWTIE2.zip</code> - sequences of short reads supporting the newly found candidate fusion genes found using Bowtie and Bowtie2 aligners;</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BWA.zip</code> - sequences of short reads supporting the newly found candidate fusion genes found using Bowtie and BWA aligners;`</li>
+  <li><code class="highlighter-rouge">viruses_bacteria_phages.txt</code> - (non-zero) reads counts for each virus/bacteria/phage from NCBI database  ftp://ftp.ncbi.nlm.nih.gov/genomes/Viruses/</li>
+  <li><code class="highlighter-rouge">info.txt</code> - information regarding genome version, Ensembl database version, versions of tools used, read counts, etc.;</li>
+  <li><code class="highlighter-rouge">fusioncatcher.log</code> -  log of the entire run (e.g. all commands/programs which have been run, command line arguments used, running time for each command, etc.).</li>
+</ul>
+
+<p>FusionCatcher reports:</p>
+<ul>
+  <li><strong>multiple times</strong> (up to four times) exactly the same candidate fusion gene, which has exactly the same fusion points/junction (i.e. FusionCatcher will output separately the fusions found for each of its four aligners/methods such that it is easy to see what method was used to find a fusion gene)</li>
+  <li><a href="href='http://www.ncbi.nlm.nih.gov/pubmed/23340173">reciprocal fusion genes</a> if they are found (e.g. geneA-geneB and also geneB-geneA)</li>
+  <li>every alternative splicing event found for each fusion gene (i.e. alternative fusion isoforms of the same fusion gene)</li>
+</ul>
+
+<p>Table 1 - Columns description for file <code class="highlighter-rouge">final-list_candidate-fusion-genes.txt</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Column</strong></th>
+      <th style="text-align: left"><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Gene_1_symbol(5end_fusion_partner)</strong></td>
+      <td style="text-align: left">Gene symbol of the 5’ end fusion partner</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Gene_2_symbol_2(3end_fusion_partner)</strong></td>
+      <td style="text-align: left">Gene symbol of the 3’ end fusion partner</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Gene_1_id(5end_fusion_partner)</strong></td>
+      <td style="text-align: left">Ensembl gene id of the 5’ end fusion partner</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Gene_2_id(3end_fusion_partner)</strong></td>
+      <td style="text-align: left">Ensembl gene id of the 3’ end fusion partner</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Exon_1_id(5end_fusion_partner)</strong></td>
+      <td style="text-align: left">Ensembl exon id of the 5’ end fusion exon-exon junction</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Exon_2_id(3end_fusion_partner)</strong></td>
+      <td style="text-align: left">Ensembl exon id of the 3’ end fusion exon-exon junction</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Fusion_point_for_gene_1(5end_fusion_partner)</strong></td>
+      <td style="text-align: left">Chromosomal position of the 5’ end of fusion junction (chromosome:position:strand); 1-based coordinate</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Fusion_point_for_gene_2(3end_fusion_partner)</strong></td>
+      <td style="text-align: left">Chromosomal position of the 3’ end of fusion junction (chromosome:position:strand); 1-based coordinate</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Spanning_pairs</strong></td>
+      <td style="text-align: left">Count of pairs of reads supporting the fusion (<strong>including</strong> also the multimapping reads)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Spanning_unique_reads</strong></td>
+      <td style="text-align: left">Count of unique reads (i.e. unique mapping positions) mapping on the fusion junction. Shortly, here are counted all the reads which map on fusion junction minus the PCR duplicated reads.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Longest_anchor_found</strong></td>
+      <td style="text-align: left">Longest anchor (hangover) found among the unique reads mapping on the fusion junction</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Fusion_finding_method</strong></td>
+      <td style="text-align: left">Aligning method used for mapping the reads and finding the fusion genes. Here are two methods used which are: (i) <strong>BOWTIE</strong> = only Bowtie aligner is used for mapping the reads on the genome and exon-exon fusion junctions, (ii) <strong>BOWTIE+BLAT</strong> = Bowtie aligner is used for mapping reads on the genome and BLAT is used for mapping reads for finding the fusion junction,  (iii) <strong>BOWTIE+STAR</strong> = Bowtie aligner is used for mapping reads on the genome and STAR is used for mapping reads for finding the fusion junction, (iv) <strong>BOWTIE+BOWTIE2</strong> = Bowtie aligner is used for mapping reads on the genome and Bowtie2 is used for mapping reads for finding the fusion junction, and (v) <strong>BOWTIE+BWA</strong> = Bowtie aligner is used for mapping reads on the genome and Bowtie2 is used for mapping reads for finding the fusion junction.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Fusion_sequence</strong></td>
+      <td style="text-align: left">The inferred fusion junction (the asterisk sign marks the junction point)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Fusion_description</strong></td>
+      <td style="text-align: left">Type of the fusion gene (see the Table 2)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Counts_of_common_mapping_reads</strong></td>
+      <td style="text-align: left">Count of reads mapping simultaneously on both genes which form the fusion gene. This is an indication how similar are the DNA/RNA sequences of the genes forming the fusion gene (i.e. what is their homology because highly homologous genes tend to appear show as candidate fusion genes). In case of completely different sequences of the genes involved in forming a fusion gene then here it is expected to have the value zero.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Predicted_effect</strong></td>
+      <td style="text-align: left">Predicted effect of the candidate fusion gene using the annotation from Ensembl database. This is shown in format <strong>effect_gene_1</strong>/<strong>effect_gene_2</strong>, where the possible values for effect_gene_1 or effect_gene_2 are: <strong>intergenic</strong>, <strong>intronic</strong>, <strong>exonic(no-known-CDS)</strong>, <strong>UTR</strong>, <strong>CDS(not-reliable-start-or-end)</strong>, <strong>CDS(truncated)</strong>, or <strong>CDS(complete)</strong>. In case that the fusion junction for both genes is within their CDS (coding sequence) then only the values <strong>in-frame</strong> or <strong>out-of-frame</strong> will be shown.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Predicted_fused_transcripts</strong></td>
+      <td style="text-align: left">All possible known fused transcripts in format ENSEMBL-TRANSCRIPT-1:POSITION-1/ENSEMBLE-TRANSCRIPT-B:POSITION-2, where are fused the sequence 1:POSITION-1 of transcript ENSEMBL-TRANSCRIPT-1 with sequence POSITION-2:END of transcript ENSEMBL-TRANSCRIPT-2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Predicted_fused_proteins</strong></td>
+      <td style="text-align: left">Predicted amino acid sequences of all possible fused proteins (separated by “;”).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Table 2 - Labels used to describe the found fusion genes (column <em>Fusion_ description</em> from file <code class="highlighter-rouge">final-list_candidate-fusion-genes.txt</code>)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Fusion_description</strong></th>
+      <th style="text-align: left"><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>1000genomes</strong></td>
+      <td style="text-align: left">fusion gene has been seen in a healthy sample. It has been found in <a href="http://dx.doi.org/10.1371/journal.pone.0104567">RNA-seq data from some samples from 1000 genomes project</a>. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>18cancers</strong></td>
+      <td style="text-align: left">fusion gene found in a RNA-seq dataset of 18 types of cancers from 600 tumor samples published <a href="http://dx.doi.org/10.1073/pnas.1606220113">here</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>adjacent</strong></td>
+      <td style="text-align: left">both genes forming the fusion are adjacent on the genome (i.e. same strand and there is no other genes situated between them on the same strand)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>antisense</strong></td>
+      <td style="text-align: left">one or both genes is a gene coding for <a href="http://en.wikipedia.org/wiki/Antisense_RNA">antisense RNA</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>banned</strong></td>
+      <td style="text-align: left">fusion gene is on a list of known false positive fusion genes. These were found with very strong supporting data in healthy samples (i.e. it showed up in file final-list_candidate_fusion_genes.txt). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>bodymap2</strong></td>
+      <td style="text-align: left">fusion gene is on a list of known false positive fusion genes. It has been found in healthy human samples collected from 16 organs from  <a href="http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-513/">Illumina BodyMap2 RNA-seq database</a>. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>cacg</strong></td>
+      <td style="text-align: left">known conjoined genes (that is fusion genes found in samples from healthy patients) from the <a href="http://cgc.kribb.re.kr/map/">CACG</a> database (please see CACG database for more information). <em>A candidate fusion gene having this label has a very high probability of being a false positive in case that one looks for fusion genes specific to a disease.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>cell_lines</strong></td>
+      <td style="text-align: left">known fusion gene from paper: C. Klijn et al., A comprehensive transcriptional portrait of human cancer cell lines, Nature Biotechnology, Dec. 2014, <a href="http://dx.doi.org/10.1038/nbt.3080">DOI:10.1038/nbt.3080</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>cgp</strong></td>
+      <td style="text-align: left">known fusion gene from the <a href="http://www.sanger.ac.uk/genetics/CGP/Census/">CGP</a> database</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>chimerdb2</strong></td>
+      <td style="text-align: left">known fusion gene from the <a href="http://ercsb.ewha.ac.kr/FusionGene/">ChimerDB 2</a> database</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>chimerdb3kb</strong></td>
+      <td style="text-align: left">known fusion gene from the <a href="http://ercsb.ewha.ac.kr/FusionGene/">ChimerDB 3 KB (literature curration)</a> database</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>chimerdb3pub</strong></td>
+      <td style="text-align: left">known fusion gene from the <a href="http://ercsb.ewha.ac.kr/FusionGene/">ChimerDB 3 PUB (PubMed articles)</a> database</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>chimerdb3seq</strong></td>
+      <td style="text-align: left">known fusion gene from the <a href="http://ercsb.ewha.ac.kr/FusionGene/">ChimerDB 3 SEQ (TCGA)</a> database</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>conjoing</strong></td>
+      <td style="text-align: left">known conjoined genes (that is fusion genes found in samples from healthy patients) from the <a href="http://metasystems.riken.jp/conjoing/">ConjoinG</a> database (please use ConjoinG database for more information regarding the fusion gene). <em>A candidate fusion gene having this label has a very high probability of being a false positive in case that one looks for fusion genes specific to a disease.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>cosmic</strong></td>
+      <td style="text-align: left">known fusion gene from the <a href="http://cancer.sanger.ac.uk/cancergenome/projects/cosmic/">COSMIC</a> database (please use COSMIC database for more information regarding the fusion gene)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>cta</strong></td>
+      <td style="text-align: left">one gene or both genes is CTA gene (that is that the gene name starts with <strong>CTA-</strong>). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ctb</strong></td>
+      <td style="text-align: left">one gene or both genes is CTB gene (that is that the gene name starts with <strong>CTB-</strong>). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ctc</strong></td>
+      <td style="text-align: left">one gene or both genes is CTC gene (that is that the gene name starts with <strong>CTC-</strong>). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ctd</strong></td>
+      <td style="text-align: left">one gene or both genes is CTD gene (that is that the gene name starts with <strong>CTD-</strong>). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>distance1000bp</strong></td>
+      <td style="text-align: left">both genes are on the same strand and they are less than 1 000 bp apart. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>distance100kbp</strong></td>
+      <td style="text-align: left">both genes are on the same strand and they are less than 100 000 bp apart. <em>A candidate fusion gene having this label has a higher probability than expected of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>distance10kbp</strong></td>
+      <td style="text-align: left">both genes are on the same strand and they are less than 10 000 bp apart. <em>A candidate fusion gene having this label has a higher probability than expected of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>duplicates</strong></td>
+      <td style="text-align: left">both genes involved in the fusion gene are <a href="http://en.wikipedia.org/wiki/Paralog#Paralogy">paralog</a> for each other. For more see <a href="http://dgd.genouest.org/">Duplicated Genes Database (DGD) database</a> . <em>A candidate fusion gene having this label has a higher probability than expected of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>exon-exon</strong></td>
+      <td style="text-align: left">the fusion junction point is exactly at the known exon’s borders of both genes forming the candidate fusion</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ensembl_fully_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are fully overlapping according to Ensembl database. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ensembl_partially_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are partially overlapping (on same strand or on different strands) according the Ensembl database. *A candidate fusion gene having this label has a good probability of being a false positive.&lt;/i&gt; &lt;/font&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ensembl_same_strand_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are fully/partially overlapping and are both on the same strand according to Ensembl database. *A candidate fusion gene having this label has a very high probability of being a false positive (this is most likely and alternative splicing event).&lt;/i&gt; &lt;/font&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>fragments</strong></td>
+      <td style="text-align: left">the genes forming the fusion are supported by only and only one fragment of RNA. <em>A candidate fusion gene having this label has a medium probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>gliomas</strong></td>
+      <td style="text-align: left">fusion gene found in a RNA-seq dataset of 272 glioblastoms published <a href="http://dx.doi.org/10.1101/gr.165126.113">here</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>gtex</strong></td>
+      <td style="text-align: left">fusion gene has been seen in a healthy sample. It has been found in <a href="http://www.gtexportal.org/home/">GTEx database</a> of healthy tissues (thru <a href="https://github.com/FusionAnnotator/FusionAnnotator">FusionAnnotator</a>). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>healthy</strong></td>
+      <td style="text-align: left">fusion gene has been seen in a healthy sample. These have been found in healthy samples but the support for them is less strong (i.e. paired reads were found to map on both genes but no fusion junction was found) than in the case of <strong>banned</strong> label (i.e. it showed up in file preliminary list of candidate fusion genes). Also genes which have some degree of sequence similarity may show up marked like this.<em>A candidate fusion gene having this label has a small probability of being a false positive in case that one looks for fusion genes specific to a disease.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>hpa</strong></td>
+      <td style="text-align: left">fusion gene has been seen in a healthy sample. It has been found in <a href="http://dx.doi.org/10.1074/mcp.M113.035600">RNA-seq database of 27 healthy tissues</a>. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>known</strong></td>
+      <td style="text-align: left">fusion gene which has been previously reported or published in scientific articles/reports/books/abstracts/databases indexed by <a href="http://www.google.com/">Google</a>, <a href="http://scholar.google.com/">Google Scholar</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed">PubMed</a>, etc. This label has only the role to answer with YES or NO the question “has ever before a given (candidate) fusion gene been published or reported?”. This label does not have in anyway the role to provide the original references to the original scientific articles/reports/books/abstracts/databases for a given fusion gene.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>lincrna</strong></td>
+      <td style="text-align: left">one or both genes is a <a href="http://en.wikipedia.org/wiki/Long_non-coding_RNA">lincRNA</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>matched-normal</strong></td>
+      <td style="text-align: left">candidate fusion gene (which is supported by paired reads mapping on both genes and also by reads mapping on the junction point) was found also in the matched normal sample given as input to the command line option ‘–normal’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>metazoa</strong></td>
+      <td style="text-align: left">one or both genes is a metazoa_srp gene <a href="http://www.genecards.org/index.php?path=/Search/keyword/metazoa_srp">Metazia_srp</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>mirna</strong></td>
+      <td style="text-align: left">one or both genes is a <a href="http://en.wikipedia.org/wiki/MicroRNA">miRNA</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>mt</strong></td>
+      <td style="text-align: left">one or both genes are situated on <a href="http://en.wikipedia.org/wiki/Mitochondrion">mitochondrion</a>. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>mX</strong> (where X is a number)</td>
+      <td style="text-align: left">count of pairs of reads supporting the fusion (<strong>excluding</strong> the mutimapping reads).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>non_cancer_tissues</strong></td>
+      <td style="text-align: left">fusion gene which has been previously reported/found in non-cancer tissues and cell lines in <a href="http://nar.oxfordjournals.org/content/early/2016/02/01/nar.gkw032.abstract">Babiceanu et al, Recurrent chimeric fusion RNAs in non-cancer tissues and cells, Nucl. Acids Res. 2016</a>. These are considered as non-somatic mutation and therefore they may be skipped and not reported.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>non_tumor_cells</strong></td>
+      <td style="text-align: left">fusion gene which has been previously reported/found in non-tumor cell lines, like for example HEK293. These are considered as non-somatic mutation and therefore may be skipped and not reported.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>no_protein</strong></td>
+      <td style="text-align: left">one or both genes have no known protein product</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>oesophagus</strong></td>
+      <td style="text-align: left">fusion gene found in a oesophageal tumors from TCGA samples, which are published <a href="http://dx.doi.org/10.1038/nature20805">here</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>oncogene</strong></td>
+      <td style="text-align: left">one gene or both genes are a known <a href="http://en.wikipedia.org/wiki/Oncogene">oncogene</a> according to <a href="https://doi.org/10.1016/j.jgg.2016.12.004">ONGENE database</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>cancer</strong></td>
+      <td style="text-align: left">one gene or both genes are cancer associated according to <a href="http://www.bushmanlab.org/links/genelists">Cancer Gene database</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>tumor</strong></td>
+      <td style="text-align: left">one gene or both genes are proto-oncogene or tumor suppresor gene according to <a href="http://www.uniprot.org">UniProt database</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>pair_pseudo_genes</strong></td>
+      <td style="text-align: left">one gene is the other’s <a href="http://en.wikipedia.org/wiki/Pseudogene">pseudogene</a>. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>pancreases</strong></td>
+      <td style="text-align: left">known fusion gene found in pancreatic tumors from article: P. Bailey et al., Genomic analyses identify molecular subtypes of pancreatic cancer, Nature, Feb. 2016, http://dx.doi.org/110.1038/nature16965</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>paralogs</strong></td>
+      <td style="text-align: left">both genes involved in the fusion gene are  <a href="http://en.wikipedia.org/wiki/Paralog#Paralogy">paralog</a> for each other (most likely this is a false positive fusion gene). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>multi</strong></td>
+      <td style="text-align: left">one of the genes of both have multi-mapping reads mapping (which map simultaneously also on other gene/genes</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>partial-matched-normal</strong></td>
+      <td style="text-align: left">candidate fusion gene (which is supported by paired reads mapping on both genes <strong>but</strong> <em>no</em> reads were found which map on the junction point) was found also in the matched normal sample given as input to the command line option ‘–normal’. This is much weaker than <strong>matched-normal</strong>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>prostates</strong></td>
+      <td style="text-align: left">known fusion gene found in 150 prostate tumors RNAs from paper: D. Robison et al, Integrative Clinical Genomics of Advanced Prostate Cancer, Cell, Vol. 161, May 2015, http://dx.doi.org/10.1016/j.cell.2015.05.001</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>pseudogene</strong></td>
+      <td style="text-align: left">one or both of the genes is a <a href="http://en.wikipedia.org/wiki/Pseudogene">pseudogene</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>readthrough</strong></td>
+      <td style="text-align: left">the fusion gene is a readthrough event (that is both genes forming the fusion are on the same strand and there is no known gene situated in between); Please notice, that many of readthrough fusion genes might be false positive fusion genes due to errors in Ensembl database annotation (for example, one gene is annotated in Ensembl database as two separate genes). <em>A candidate fusion gene having this label has a high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>refseq_fully_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are fully overlapping according to RefSeq NCBI database. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>refseq_partially_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are partially overlapping (on same strand or on different strands) according the RefSeq NCBI. *A candidate fusion gene having this label has a good probability of being a false positive.&lt;/i&gt; &lt;/font&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>refseq_same_strand_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are fully/partially overlapping and are both on the same strand according to RefSeq NCBI database. *A candidate fusion gene having this label has a very high probability of being a false positive (this is most likely and alternative splicing event).&lt;/i&gt; &lt;/font&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ribosomal</strong></td>
+      <td style="text-align: left">one or both gene is a gene encoding for <a href="http://en.wikipedia.org/wiki/Ribosomal_protein">ribosomal protein</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>rp11</strong></td>
+      <td style="text-align: left">one gene or both genes is RP11 gene (that is that the gene name starts with <strong>RP11-</strong>). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>rp</strong></td>
+      <td style="text-align: left">one gene or both genes is RP?? gene (that is that the gene name starts with <strong>RP??-</strong>) where ? is a digit. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>rrna</strong></td>
+      <td style="text-align: left">one or both genes is a <a href="http://en.wikipedia.org/wiki/Ribosomal_RNA">rRNA</a>.  <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>short_distance</strong></td>
+      <td style="text-align: left">both genes are on the same strand and they are less than X bp apart, where X is set using the option ‘–dist-fusion’ and by default it is 200 000 bp. <em>A candidate fusion gene having this label has a higher probability than expected of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>similar_reads</strong></td>
+      <td style="text-align: left">both genes have the same reads which map simultaneously on both of them (this is an indicator of how similar are the sequences of both genes; ideally this should be zero or as close to zero as possible for a real fusion). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>similar_symbols</strong></td>
+      <td style="text-align: left">both genes have the same or very similar gene names (for example: RP11ADF.1 and RP11ADF.2). <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>snorna</strong></td>
+      <td style="text-align: left">one or both genes is a <a href="http://en.wikipedia.org/wiki/Small_nucleolar_RNA">snoRNA</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>snrna</strong></td>
+      <td style="text-align: left">one or both genes is a <a href="http://en.wikipedia.org/wiki/Small_nuclear_RNA">snRNA</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>tcga</strong></td>
+      <td style="text-align: left">known fusion gene from the <a href="https://tcga-data.nci.nih.gov/tcga/">TCGA</a> database (please use Google for more information regarding the fusion gene)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ticdb</strong></td>
+      <td style="text-align: left">known fusion gene from the <a href="http://www.unav.es/genetica/TICdb/">TICdb</a> database (please use TICdb database for more information regarding the fusion gene)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>trna</strong></td>
+      <td style="text-align: left">one or both genes is a <a href="http://en.wikipedia.org/wiki/Transfer_RNA">tRNA</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ucsc_fully_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are fully overlapping according to UCSC database. <em>A candidate fusion gene having this label has a very high probability of being a false positive.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ucsc_partially_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are partially overlapping (on same strand or on different strands) according the UCSC database.  *A candidate fusion gene having this label has a good probability of being a false positive.&lt;/i&gt; &lt;/font&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ucsc_same_strand_overlapping</strong></td>
+      <td style="text-align: left">the genes forming the fusion gene are fully/partially overlapping and are both on the same strand according to UCSC database. *A candidate fusion gene having this label has a very high probability of being a false positive (this is most likely and alternative splicing event).&lt;/i&gt; &lt;/font&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>yrna</strong></td>
+      <td style="text-align: left">one or both genes is a <a href="http://en.wikipedia.org/wiki/Y_RNA">Y RNA</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="63---visualization">6.3 - Visualization</h2>
+<p><em>FusionCatcher</em> outputs also the zipped FASTA files containing the reads which support the found candidate fusions genes. The files are:</p>
+<ul>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BOWTIE.zip</code>,</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BLAT.zip</code>,</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_STAR.zip</code>,</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BOWTIE2.zip</code>, and</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BWA.zip</code>.</li>
+</ul>
+
+<p>The reads which support the:</p>
+<ul>
+  <li>junction of the candidate fusion have their name ending with <code class="highlighter-rouge">_supports_fusion_junction</code>, and</li>
+  <li>candidate fusion (i.e. one reads map on one gene and the paired-read maps on the other fusion gene) have their name ending with <code class="highlighter-rouge">_supports_fusion_pair</code>.</li>
+</ul>
+
+<p>These supporting reads (given as FASTA and FASTQ files) may be used for further visualization purposes. For example, one may use these supporting reads and align them himself/herself using his/her favourite:</p>
+<ul>
+  <li>aligner (e.g. <code class="highlighter-rouge">Bowtie/Bowtie2/TopHat/STAR/GSNAP/etc.</code>),</li>
+  <li>version/assembly of genome,</li>
+  <li>mapping format output (e.g. SAM/BAM), and</li>
+  <li>NGS visualizer (e.g. <a href="http://www.broadinstitute.org/igv/">IGV</a>/<a href="http://genome.ucsc.edu/">UCSC Genome Browser</a>/etc.)</li>
+</ul>
+
+<h3 id="631---ucsc-genome-browser">6.3.1 - UCSC Genome Browser</h3>
+<p>For example, the sequences of supporting reads for a given candidate fusion gene may be visualized using <a href="http://genome.ucsc.edu/">UCSC Genome Browser</a> by aligning them using the <a href="http://genome.ucsc.edu/">UCSC Genome Browser</a>’s  BLAT aligner (i.e. copy and paste the reads here: <a href="http://genome.ucsc.edu/cgi-bin/hgBlat?command=start">BLAT tool of UCSC Genome Browser</a> –&gt; click the button <strong>Submit</strong> –&gt; navigate into the <a href="http://genome.ucsc.edu/">UCSC Genome Browser</a> to the genes that form the fusion genes). Also zooming out several times gives better view here.</p>
+
+<h3 id="632---psl-format">6.3.2 - PSL format</h3>
+<p>If one uses the <code class="highlighter-rouge">--visualization-psl</code> command line option of the <em>FusionCatcher</em> then the BLAT alignment of the supporting reads will be done automatically by the <em>FusionCatcher</em> and the results are saved in <a href="http://genome.ucsc.edu/FAQ/FAQformat.html#format2">PSL</a> format files with names that are ending with <code class="highlighter-rouge">_reads.psl</code> in the:</p>
+<ul>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BOWTIE.zip</code>,</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BLAT.zip</code>,</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_STAR.zip</code>, and</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BOWTIE2.zip</code>, and</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BWA.zip</code>.</li>
+</ul>
+
+<p>The files with names ending in <code class="highlighter-rouge">_reads.psl</code> may be used further for visualization of the candidate fusion genes using <a href="http://genome.ucsc.edu/">UCSC Genome Browser</a>, <a href="http://www.broadinstitute.org/igv/">IGV (Integrative Genome Viewer)</a> or any other viewer/browser which supports the <a href="http://genome.ucsc.edu/FAQ/FAQformat.html#format2">PSL</a> format.</p>
+
+<p>Note: If one generated the build files using <code class="highlighter-rouge">fusioncatcher-build.py</code> the command line <code class="highlighter-rouge">--visualization-psl</code> option should work just fine. If one <strong>downloaded the build files</strong> then the command line option <code class="highlighter-rouge">--visualization-psl</code> will not work an it needs to be enabled by creating manually first the file <code class="highlighter-rouge">fusioncatcher/data/current/genome.2bit</code> for FusionCatcher, something like this (here the assumption is that the build files for one’s organism of interest are in <code class="highlighter-rouge">fusioncatcher/data/current/</code>):</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># re-build the genome index using BLAT where the genome is given FASTA file genome.fa
+fusioncatcher/tools/bowtie/bowtie-inspect fusioncatcher/data/current/genome_index/ &gt; fusioncatcher/data/current/genome.fa
+fusioncatcher/tools/blat/faToTwoBit fusioncatcher/data/current/genome.fa fusioncatcher/data/current/genome.2bit -noMask
+</code></pre>
+</div>
+
+<h3 id="633---sam-format">6.3.3 - SAM format</h3>
+
+<h4 id="6331---automatic-method">6.3.3.1 - Automatic method</h4>
+<p>If one uses the <code class="highlighter-rouge">--visualization-sam</code> command line option of the <em>FusionCatcher</em> then the BOWTIE2 alignment of the supporting reads will be done automatically by the <em>FusionCatcher</em> and the results are saved as <a href="http://samtools.github.io/hts-specs/SAMv1.pdf">SAM</a> files with names that are ending with <code class="highlighter-rouge">_reads.sam</code> in the:</p>
+<ul>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BOWTIE.zip</code>,</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BLAT.zip</code>,</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_STAR.zip</code>,</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BOWTIE2.zip</code>, and</li>
+  <li><code class="highlighter-rouge">supporting-reads_gene-fusions_BWA.zip</code>.</li>
+</ul>
+
+<p>The files with names ending in <code class="highlighter-rouge">_reads.sam</code> (please note, that they still needed to be converted to BAM, coordiante sorted and indexed first) may be used further for visualization of the candidate fusion genes using <a href="http://genome.ucsc.edu/">UCSC Genome Browser</a>, <a href="http://www.broadinstitute.org/igv/">IGV (Integrative Genome Viewer)</a> or any other viewer/browser which supports the <a href="http://samtools.github.io/hts-specs/SAMv1.pdf">SAM</a> format.</p>
+
+<h4 id="6332---manual-method">6.3.3.2 - Manual method</h4>
+<p>Here is an rough example of manually aligning the supporting reads (that is named as <code class="highlighter-rouge">supporting_reads.fq</code> in the below example; the FASTQ files needed here are the files ending in <code class="highlighter-rouge">_reads.fq</code> from the ZIP archives <code class="highlighter-rouge">supporting-reads_gene-fusions_*.zip</code> produced by <em>FusionCatcher</em>) using different aligners.</p>
+<ul>
+  <li><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a> aligner (where <code class="highlighter-rouge">your_choice_of_genome_bowtie2_index</code> may be for human, for example <a href="ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/hg19.zip">this</a>)</li>
+  <li>alignment done ignoring the paired-end information (i.e. like single reads):
+    ```
+bowtie2 \
+–local \
+-k 10 \
+-x your_choice_of_genome_bowtie2_index \
+-U supporting_reads.fq \
+-S fusion_genes.sam</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>samtools view -bS fusion_genes.sam</td>
+      <td>samtools sort - fusion_genes.sorted</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>samtools index fusion_genes.sorted.bam
+    ```</p>
+<ul>
+  <li>alignment done taking into account the paired-end information:
+    ```
+cat supporting_reads.fq | \
+paste - - - - - - - - | \
+awk ‘{print $1”\n”$2”\n”$3”\n”$4 &gt; “r1.fq”; print $5”\n”$6”\n”$7”\n”$8 &gt; “r2.fq”}’</li>
+</ul>
+
+<p>bowtie2 \
+–local \
+-k 10 \
+-x your_choice_of_genome_bowtie2_index \
+-1 r1.fq \
+-2 r2.fq \
+-S fusion_genes.sam</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>samtools view -bS fusion_genes.sam</td>
+      <td>samtools sort - fusion_genes.sorted</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>samtools index fusion_genes.sorted.bam
+    ```</p>
+<ul>
+  <li><a href="http://github.com/alexdobin/STAR">STAR</a> aligner (where <code class="highlighter-rouge">your_choice_of_genome_star_index</code> should be built according to the <a href="http://github.com/alexdobin/STAR/tree/master/doc">STAR Manual</a>)</li>
+  <li>alignment done ignoring the paired-end information (i.e. like single reads):
+    ```
+STAR \
+–genomeDir your_choice_of_genome_star_index \
+–alignSJoverhangMin 9 \
+–chimSegmentMin 17 \
+–readFilesIn supporting_reads.fq \
+–outFileNamePrefix .</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>samtools view -bS fusion_genes.sam</td>
+      <td>samtools sort - fusion_genes.sorted</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>samtools index fusion_genes.sorted.bam
+    ```</p>
+<ul>
+  <li>alignment done taking into account the paired-end information:
+    ```
+cat supporting_reads.fq | \
+paste - - - - - - - - | \
+awk ‘{print $1”\n”$2”\n”$3”\n”$4 &gt; “r1.fq”; print $5”\n”$6”\n”$7”\n”$8 &gt; “r2.fq”}’</li>
+</ul>
+
+<p>STAR \
+–genomeDir /your_choice_of_genome_star_index/ \
+–alignSJoverhangMin 9 \
+–chimSegmentMin 17 \
+–readFilesIn r1.fq r2.fq\
+–outFileNamePrefix .</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>samtools view -bS Aligned.out.sam</td>
+      <td>samtools sort - fusion_genes.sorted</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>samtools index fusion_genes.sorted.bam
+    ```</p>
+
+<ul>
+  <li><a href="http://users.soe.ucsc.edu/~kent/src/">BLAT</a> aligner (where <code class="highlighter-rouge">your_choice_of_genome_blat_index</code> should be built according to the <a href="https://genome.ucsc.edu/goldenpath/help/blatSpec.html">BLAT’s examples</a>)
+```
+    <h1 id="build-the-genome-index-using-blat-where-the-genome-is-given-fasta-file-genomefa">build the genome index using BLAT where the genome is given FASTA file genome.fa</h1>
+    <p>faToTwoBit genome.fa genome.2bit -noMask</p>
+  </li>
+</ul>
+
+<h1 id="align-the-supporting-reads-given-by-fusioncatcher-the-fasta">align the supporting reads given by FusionCatcher (the FASTA</h1>
+<h1 id="file-for-your-fusion-of-interest-can-be-found-in-zip-files">file for your fusion of interest can be found in ZIP files</h1>
+<h1 id="generated-as-output-by-fusioncatcher">generated as output by FusionCatcher,</h1>
+<h1 id="eg-eml4alk__4226495129223528_readsfa-using-blat-aligner">e.g. EML4–ALK__42264951–29223528_reads.fa) using BLAT aligner</h1>
+<p>blat -stepSize=5 -repMatch=2253 -minScore=0 -minIdentity=0 genome.2bit supporting_reads.fa supporting_reads_mapped.psl</p>
+
+<h1 id="visualize-the-psl-file-supporting_reads_mappedpslin-igv-or-run-psl2sampl-to-convert-it-into-sam-format">visualize the PSL file supporting_reads_mapped.pslin IGV or run psl2sam.pl to convert it into SAM format</h1>
+<p>psl2sam.pl supporting_reads_mapped.psl &gt; supporting_reads_mapped.sam</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>```
+</code></pre>
+</div>
+
+<p>Further, the files <code class="highlighter-rouge">fusion_genes.sorted.bam</code> and <code class="highlighter-rouge">fusion_genes.sorted.bam.bai</code> may be used with your favourite NGS visualizer!</p>
+
+<h3 id="634---chimera-rbioconductor-package">6.3.4 - Chimera <code class="highlighter-rouge">R/BioConductor</code> package</h3>
+<p>For visualization of fusion genes found by <em>FusionCatcher</em> one may use also the <code class="highlighter-rouge">R/BioConductor</code> package <a href="http://www.bioconductor.org/packages/release/bioc/html/chimera.html">Chimera</a>, which supports <em>FusionCatcher</em>.</p>
+
+<h2 id="64---examples">6.4 - Examples</h2>
+
+<h3 id="641---example-1">6.4.1 - Example 1</h3>
+
+<p>Here, is an example of how <em>FusionCatcher</em> can be used to search for fusion genes in human RNA-seq sample where:</p>
+<ol>
+  <li>any distance at chromosomal level between the candidate fusion genes is acceptable, <strong>and</strong></li>
+  <li>the candidate fusion genes are allowed to be readthroughs (i.e. the genes forming a fusion gene maybe adjacent on the chromosome)</li>
+  <li>the candidate fusion genes are not allowed to be less the 1000 bp apart on the same strand</li>
+  <li>use two methods to find the fusion genes (i.e. use BOWTIE, BLAT, STAR, and BOWTIE2 aligners for mapping the reads and this allows to find the fusion genes even in the case that the annotation from Ensembl database is not entirely correct, like for example find a fusion junction even if it is in the middle of a exon or intron)
+    <div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher \
+-d /some/human/data/directory/ \
+-i /some/input/directory/containing/fastq/files/ \
+-o /some/output/directory/
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="642---example-2">6.4.2 - Example 2</h3>
+
+<p>Here, is an example of how <em>FusionCatcher</em> can be used to search for fusion genes in human RNA-seq sample where:</p>
+<ol>
+  <li>any distance at chromosomal level between the candidate fusion genes is acceptable, <strong>and</strong></li>
+  <li>the candidate fusion genes are <strong>not</strong> allowed to be readthroughs (i.e. there is still at least one known gene situated one the same strand in between the genes which form the candidate fusion gene)</li>
+  <li>the candidate fusion genes are not allowed to be less the 1000 bp apart on the same strand</li>
+  <li>use only <strong>one</strong> method to find the fusion genes (i.e. use only BOWTIE aligner for mapping the reads and this allows to find the fusion genes only in the case that the annotation from Ensembl database is correct, like for example find a fusion junction only if it matches perfectly the known exon borders)
+    <div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher \
+-d /some/human/data/directory/ \
+-i /some/input/directory/containing/fastq/files/ \
+-o /some/output/directory/ \
+--skip-readthroughs \
+--skip-blat
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<hr />
+
+<h1 id="7---aligners">7 - ALIGNERS</h1>
+
+<h2 id="71---bowtie">7.1 - Bowtie</h2>
+
+<p>By default, <em>FusionCatcher</em> its the Bowtie aligner for finding candidate fusion genes. This approach relies heavily on good is the annotation data for the given organism in the Ensembl database. If, for example, a gene is not annotated well and has several exons which are not annotated in the Ensembl database and if one of these exons is the one involved in the fusion point then this fusion gene will not be found by using only the Bowtie aligner. In order to find also the fusion genes where the the junction point is in the middle of exons or introns, <code class="highlighter-rouge">*FusionCatcher*</code> is using by default the BLAT, and STAR aligners in addition to Bowtie aligner. The command line options ‘<code class="highlighter-rouge">--skip-blat</code>’,’<code class="highlighter-rouge">--skip-star</code>’, ‘<code class="highlighter-rouge">--skip-bowtie2</code>’, or ‘<code class="highlighter-rouge">--skip-bwa</code>’ should be used in order to specify what aligners should not be used. The command line option ‘<code class="highlighter-rouge">--aligners</code>’ specifies which aligners should be used by default. For example, ‘<code class="highlighter-rouge">--aligners=blat,star,bowtie2,bwa</code>’ forces <em>FusionCatcher</em> too use all aligners for finding fusion genes</p>
+
+<h2 id="72---bowtie-and-blat">7.2 - Bowtie and Blat</h2>
+
+<p>The use of Bowtie and Blat aligners is the <strong>default</strong> approach of <em>FusionCatcher</em> for finding fusion genes.</p>
+
+<p>In order not to use this approach the command line option ‘<code class="highlighter-rouge">--skip-blat</code>’ should be added (or remove the string <code class="highlighter-rouge">blat</code> from line <code class="highlighter-rouge">aligners</code> from file <code class="highlighter-rouge">fusioncatcher/etc/configuration.cfg</code>), as following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher \
+-d /some/human/data/directory/ \ 
+-i /some/input/directory/containing/fastq/files/ \
+-o /some/output/directory/ \
+--skip-blat
+</code></pre>
+</div>
+
+<p>Please, read the license of Blat aligner before using this approach in order to see if you may use Blat! <em>FusionCatcher</em> will use Blat aligner when using this approach!</p>
+
+<h2 id="73---bowtie-and-star">7.3 - Bowtie and STAR</h2>
+
+<p>The use of Bowtie and STAR aligners is the <strong>default</strong> approach of <em>FusionCatcher</em> for finding fusion genes.</p>
+
+<p>In order not to use this approach the command line option ‘<code class="highlighter-rouge">--skip-star</code>’ should be added, as following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher \
+-d /some/human/data/directory/ \ 
+-i /some/input/directory/containing/fastq/files/ \
+-o /some/output/directory/ \
+--skip-star
+</code></pre>
+</div>
+
+<h2 id="74---bowtie-and-bowtie2">7.4 - Bowtie and Bowtie2</h2>
+
+<p>The use of Bowtie and Bowtie2 aligners is <strong>not</strong> the <strong>default</strong> approach of <em>FusionCatcher</em> for finding fusion genes.</p>
+
+<p>In order not to use this approach the command line option ‘<code class="highlighter-rouge">--skip-bowtie2</code>’ should be added, as following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher \
+-d /some/human/data/directory/ \ 
+-i /some/input/directory/containing/fastq/files/ \
+-o /some/output/directory/ \
+--skip-bowtie2
+</code></pre>
+</div>
+
+<p>In order to use this approach the command line option ‘<code class="highlighter-rouge">--aligners</code>’ should contain the string ‘<code class="highlighter-rouge">bowtie2</code>’, like for example</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher \
+-d /some/human/data/directory/ \ 
+-i /some/input/directory/containing/fastq/files/ \
+-o /some/output/directory/ \
+--aligners blat,star,bowtie2
+</code></pre>
+</div>
+
+<h2 id="75---bowtie-and-bwa">7.5 - Bowtie and BWA</h2>
+
+<p>The use of Bowtie and BWA aligners is <strong>not</strong> the <strong>default</strong> approach of <em>FusionCatcher</em> for finding fusion genes.</p>
+
+<p>In order not to use this approach the command line option ‘<code class="highlighter-rouge">--skip-bowtie2</code>’ should be added, as following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher \
+-d /some/human/data/directory/ \ 
+-i /some/input/directory/containing/fastq/files/ \
+-o /some/output/directory/ \
+--skip-bowtie2
+</code></pre>
+</div>
+
+<p>In order to use this approach the command line option ‘<code class="highlighter-rouge">--aligners</code>’ should contain the string ‘<code class="highlighter-rouge">bwa</code>’, like for example</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher \
+-d /some/human/data/directory/ \ 
+-i /some/input/directory/containing/fastq/files/ \
+-o /some/output/directory/ \
+--aligners blat,star,bwa
+</code></pre>
+</div>
+
+<hr />
+<h1 id="8---command-line-options">8 - Command line options</h1>
+
+<h2 id="fusioncatcher">fusioncatcher</h2>
+<p>It searchers for fusion genes and/or translocations in RNA-seq data (paired-end reads FASTQ files produced by Illumina next-generation sequencing platforms like Illumina Solexa and Illumina <code class="highlighter-rouge">HiSeq</code>) in diseased samples. Its command line is:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher [options]
+</code></pre>
+</div>
+<p>and the command line options are:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -i INPUT_FILENAME, --input=INPUT_FILENAME
+                        The input file(s) or directory. The files should be in
+                        FASTQ or SRA format and may be or not compressed using
+                        gzip or zip. A list of files can be specified by given
+                        the filenames separated by comma. If a directory is
+                        given then it will analyze all the files found with
+                        the following extensions: .sra, .fastq, .fastq.zip,
+                        .fastq.gz, .fastq.bz2, fastq.xz, .fq, .fq.zip, .fq.gz,
+                        .fq.bz2, fz.xz, .txt, .txt.zip, .txt.gz, .txt.bz2 .
+  --batch               If this is used then batch mode is used and the input
+                        specified using '--input' or '-i' is: (i) a tab-
+                        separated text file containing a each line such that
+                        there is one sample per line and first column are the
+                        FASTQ files' full pathnames/URLs, separated by commas,
+                        corresponding to the sample and an optional second
+                        column containing the name for the sample, or (ii) a
+                        input directory which contains a several
+                        subdirectories such that each subdirectory corresponds
+                        to only one sample and it contains all the FASTQ files
+                        corresponding to that sample. This is useful when
+                        several samples needs to be analyzed.
+  --single-end          If this is used then it is assumed that all the input
+                        reads are single-end reads which must be longer than
+                        130 bp. Be default it is assumed that all input reads
+                        come from a paired-end reads.
+  -I NORMAL_MATCHED_FILENAME, --normal=NORMAL_MATCHED_FILENAME
+                        The input file(s) or directory containing the healthy
+                        normal-matched data. They should be given in the same
+                        format as for '--input'. In case that this option is
+                        used then the files/directory given to '--input' is
+                        considered to be from the sample of a patient with
+                        disease. This is optional.
+  -o OUTPUT_DIRECTORY, --output=OUTPUT_DIRECTORY
+                        The output directory where all the output files
+                        containing information about the found candidate
+                        fusiongenes are written. Default is 'none'.
+  -d DATA_DIRECTORY, --data=DATA_DIRECTORY
+                        The data directory where all the annotations files
+                        from Ensembl database are placed, e.g. 'data/'. This
+                        directory should be built using 'fusioncatcher-build'.
+                        If it is not used then it is read from configuration
+                        file specified with '--config' from 'data = ...' line.
+  -T TMP_DIRECTORY, --tmp=TMP_DIRECTORY
+                        The temporary directory where all the outputs files
+                        and directories will be written. Default is directory
+                        'tmp' in the output directory specified with '--
+                        output'.
+  -p PROCESSES, --threads=PROCESSES
+                        Number or processes/threads to be used for running
+                        SORT, Bowtie, BLAT, STAR, BOWTIE2 and other
+                        tools/programs. If it is 0 (as it is by default) then
+                        the number of processes/threads will be read first
+                        from 'fusioncatcher/etc/configuration.cfg' file. If
+                        even there it is still set to 0 then 'min(number-of-
+                        CPUs-found,16)' processes will be used. Setting number
+                        of threads in 'fusioncatcher/etc/configuration.cfg'
+                        might be usefull in situations where one server is
+                        shared between several users and in order to limit
+                        FusionCatcher using all the CPUs/resources.Default is
+                        '0'.
+  --config=CONFIGURATION_FILENAME
+                        Configuration file containing the paths to external
+                        tools (e.g. Bowtie, Blat, fastq-dump.) in case that
+                        they are not specified in PATH variable! Default is '/
+                        apps/fusioncatcher/etc/configuration.cfg,/apps/fusionc
+                        atcher/bin/configuration.cfg'.
+  -z, --skip-update-check
+                        Skips the automatic routine that contacts the
+                        FusionCatcher server to check for a more recent
+                        version. Default is 'False'.
+  -V, --keep-viruses-alignments
+                        If it is set then the SAM alignments files of reads
+                        mapping on viruses genomes are saved in the output
+                        directory for later inspection by the user. Default is
+                        'False'.
+  -U, --keep-unmapped-reads
+                        If it is set then the FASTQ files, containing the
+                        unmapped reads (i.e. reads which do not map on genome
+                        and transcriptome), are saved in the output directory
+                        for later inspection by the user. Default is 'False'.
+  --aligners=ALIGNERS   The aligners to be used on Bowtie aligner. By default
+                        always BOWTIE aligner is used and it cannot be
+                        disabled. The choices are:
+                        ['blat','star','bowtie2','bwa']. Any combination of
+                        these is accepted if the aligners' names are comma
+                        separated. For example, if one wants to used all four
+                        aligners then 'blat,star,bowtie2,bwa' should be given.
+                        The command line options '--skip-blat', '--skip-star',
+                        and '--skip-bowtie2' have priority over this option.
+                        If the first element in the list is the configuration
+                        file (that is '.cfg' file) of FusionCatcher then the
+                        aligners specified in the list of aligners specified
+                        in the configuration file will be used (and the rest
+                        of aligner specified here will be ignored). In case
+                        that the configuration file is not found then the
+                        following aligners from the list will be used. Default
+                        is
+                        '/apps/fusioncatcher/etc/configuration.cfg,blat,star'.
+  --skip-blat           If it is set then the pipeline will NOT use the BLAT
+                        aligner and all options and methods which make use of
+                        BLAT will be disabled. BLAT aligner is used by
+                        default. Please, note that BLAT license does not allow
+                        BLAT to be used for commercial activities. Fore more
+                        information regarding BLAT please see its license:
+                        &lt;http://users.soe.ucsc.edu/~kent/src/&gt;. Default is
+                        'False'.
+  --skip-star           If it is set then the pipeline will NOT use the STAR
+                        aligner and all options and methods which make use of
+                        STAR will be disabled. STAR aligner is used by
+                        default. Default is 'False'.
+  --sort-buffer-size=SORT_BUFFER_SIZE
+                        It specifies the buffer size for command SORT. Default
+                        is '80%' if less than 32GB installed RAM else is set 
+                        to 26 GB.
+  --start=START_STEP    It re-starts executing the workflow/pipeline from the
+                        given step number. This can be used when the pipeline
+                        has crashed/stopped and one wants to re-run it from
+                        from the step where it stopped without re-running from
+                        the beginning the entire pipeline. 0 is for restarting
+                        automatically and 1 is the first step. Default is '0'.
+
+
+</code></pre>
+</div>
+
+<h2 id="fusioncatcher-build">fusioncatcher-build</h2>
+<p>It downloads the necessary data for a given organism from the Ensembl database and it builds the necessary files/indexes which are needed to running <em>FusionCatcher</em>. Its command line is:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>fusioncatcher-build [options]
+</code></pre>
+</div>
+<p>and the command line options are:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -o OUTPUT_DIRECTORY, --output=OUTPUT_DIRECTORY
+                        The output directory where all the outputs files  and
+                        directories will be written.
+  -c CONFIGURATION_FILENAME, --config=CONFIGURATION_FILENAME
+                        Configuration file containing the paths to external
+                        tools (e.g. Bowtie, etc.) in case that they are not in
+                        PATH! Default is '/apps/fusioncatcher/bin/../etc/confi
+                        guration.cfg,/apps/fusioncatcher/bin/configuration.cfg
+                        '.
+  -g ORGANISM, --organism=ORGANISM
+                        Organism for which the data is downloaded from Ensembl
+                        database and built, for example: 'homo_sapiens',
+                        'mus_musculus', 'rattus_norvegicus',
+                        'canis_familiaris', etc. Default is 'homo_sapiens'.
+  -w WEB_ENSEMBL, --web=WEB_ENSEMBL
+                        Ensembl database web site from where the data is
+                        downloaded.  e.g. 'www.ensembl.org',
+                        'uswest.ensembl.org', 'useast.ensembl.org',
+                        'asia.ensembl.org', etc. Default is 'www.ensembl.org'.
+  -e FTP_ENSEMBL, --ftp-ensembl=FTP_ENSEMBL
+                        Ensembl database FTP site from where the data is
+                        downloaded. Default is 'ftp.ensembl.org'.
+  --ftp-ensembl-path=FTP_ENSEMBL_PATH
+                        The path for Ensembl database FTP site from where the
+                        data is downloaded.
+  -x FTP_UCSC, --ftp-ucsc=FTP_UCSC
+                        UCSC database FTP site from where the data is
+                        downloaded. Default is 'hgdownload.cse.ucsc.edu'.
+  -n FTP_NCBI, --ftp-ncbi=FTP_NCBI
+                        NCBI database FTP site from where the data is
+                        downloaded. Default is 'ftp.ncbi.nlm.nih.gov'.
+  --skip-blat           If it is set then the pipeline will NOT use the BLAT
+                        aligner and all options and methods which make use of
+                        BLAT will be disabled. BLAT aligner is used by
+                        default. Please, note that BLAT license does not allow
+                        BLAT to be used for commercial activities. Fore more
+                        information regarding BLAT please see its license:
+                        &lt;http://users.soe.ucsc.edu/~kent/src/&gt;. Default is
+                        'False'.
+  --enlarge-genes       If it is set then the genes are enlarged (i.e. their
+                        introns include also in the transcriptome). Default is
+                        'False'.
+  -p PROCESSES, --threads=PROCESSES
+                        Number or processes/threads to be used. Default is
+                        '0'.
+  --skip-database=SKIP_DATABASE
+                        If it is set then the pipeline will skip the specified
+                        database(s). The choices are ['cosmic','conjoing','chi
+                        merdb2','ticdb','cgp','cacg']. If several databases
+                        should be skipped, then their names shall be separated
+                        by comma. Default is ''.
+  -s START_STEP, --start=START_STEP
+                        It starts executing the workflow from the given step
+                        number. This can be used when the pipeline has
+                        crashed/stopped and one wants to re-run it from from
+                        the step where it stopped without re-running from the
+                        beginning the entire pipeline. 0 is for restarting
+                        automatically and 1 is the first step. This is
+                        intended to be used for debugging. Default is '0'.
+  -l HASH, --hash=HASH  Hash to be used for computing checksum. The choices
+                        are ['no','crc32','md5','adler32','sha512','sha256'].
+                        If it is set up to 'no' then no checksum is used and
+                        the entire pipeline is executed as a normal shell
+                        script. For more information see 'hash_library' in
+                        'workflow.py'. This is intended to be used for
+                        debugging. Default is 'no'.
+  -k, --keep            Preserve intermediate files produced during the run.
+                        By default, they are NOT deleted upon exit. This is
+                        intended to be used for debugging. Default value is
+                        'False'.
+  -u CHECKSUMS_FILENAME, --checksums=CHECKSUMS_FILENAME
+                        The name of the checksums file. This is intended to be
+                        used for debugging. Default value is 'checksums.txt'.
+
+</code></pre>
+</div>
+
+<hr />
+
+<h1 id="9---methods">9 - Methods</h1>
+
+<p>The main goal of <em>FusionCatcher</em> is to find <strong>somatic</strong> (and/or pathogenic) fusion genes in RNA-seq data.</p>
+
+<p><em>FusionCatcher</em> is doing its own quality filtering/trimming of reads. This is needed because most a very important factor for finding fusion genes in RNA-seq experiment is the length of RNA fragments.  <strong>Ideally</strong> the RNA fragment size for finding fusion genes should be over 300 bp.  Most of the RNA-seq experiments are designed for doing differentially expression analyses and not for finding fusion genes and therefore the RNA fragment size many times is less than 300bp and the trimming and quality filtering should be done in such a way that it does not decrease even more the RNA fragment size.</p>
+
+<p><em>FusionCatcher</em> is able to finding fusion genes even in cases where the fusion junction is within known exon or within known intron (for example in the middle of an intron) due to the use of BLAT aligner. The minimum condition for <em>FusionCatcher</em> to find a fusion gene is that both genes involved in the fusion are annotated in Ensembl database (even if their gene structure is “wrong”).</p>
+
+<p><em>FusionCatcher</em> is spending most of computational analysis on the most promising fusion genes candidate and tries as early as possible to filter out the candidate fusion genes which do not look promising, like for example:</p>
+<ul>
+  <li>candidate fusion gene is composed of a gene and its pseudogene, or</li>
+  <li>candidate fusion gene is composed of a gene and its paralog gene, or</li>
+  <li>candidate fusion gene is composed of a gene and a miRNA gene (but a gene which contains miRNA genes are not skipped), or</li>
+  <li>candidate fusion gene is composed of two genes which have a very sequence similarity (i.e. <em>FusionCatcher</em> is computing its homology score), or</li>
+  <li>candidate fusion gene is known to be found in samples from healthy persons (using the 16 organs RNA-seq data from the Illumina BodyMap2), or</li>
+  <li>candidate fusion gene is in one of the known databases of fusion genes found in healthy persons, i.e. ChimerDB2, CACG, and ConjoinG.</li>
+</ul>
+
+<p><em>FusionCatcher</em> is using by default three aligners for mapping the reads. The aligners are Bowtie, BLAT, and STAR. STAR is used here only and only for “splitting” the reads while aligning them.</p>
+
+<hr />
+
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  <!--<footer>
+        <p>This project is maintained by  Maurizio Polano<br/></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+-->
+  </body>
+</html>

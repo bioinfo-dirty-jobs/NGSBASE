@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Training Course on Fusion transcript detection</title>
+ <link href="http://localhost:4000/training_fusion/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/training_fusion/"/>
+ <updated>2018-02-24T19:16:32+01:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+
+</feed>

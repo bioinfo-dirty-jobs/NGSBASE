@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hand on on exploration results &middot; Training Course on Fusion transcript detection
+    
+  </title>
+
+  <!-- CSS -->
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/training_fusion/public/css/poole.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/syntax.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/lanyon.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/training_fusion/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/training_fusion/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="/training_fusion/js/toc.js"></script>
+</head>
+
+
+  <body class="theme-base-07">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Fusion training</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/training_fusion/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/01.welcome/">Welcome and introduction</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">General installation for Fusion detection tutorial</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/03.jaffa/">Jaffa configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/04.jaffa.tutorial/">Tutorial  jaffa program</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/05.starfusion/">STAR-FUSION configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.starfusion.tutorial/">Tutorial star-fusion</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="http://localhost:4000/lectures/07.exploration/">Hand on on exploration results</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/08.fusioncather/">Fusioncatcher</a>
+        
+      
+    
+
+    <!--<a class="sidebar-nav-item" href="/archive/v1.2.zip">Download</a>-->
+    <a class="sidebar-nav-item" href="https://bioinfo-dirty-jobs.github.io/training_fusion/">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.2</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://localhost:4000/" title="Home">Training Course on Fusion transcript detection</a>
+            <!--<p></p><small>Hand on on exploration results</small></p>-->
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Hand on on exploration results</h1>
+  <p class="note">Result fusion files</p>
+  
+    <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+  
+  <hr />
+
+<h1 id="exploration-fusion-results">Exploration Fusion results</h1>
+<hr />
+
+<ul>
+  <li><a href="">Data Exploration</a></li>
+  <li><a href="">Hand On 1 </a></li>
+  <li><a href="">Hand On 2 </a></li>
+  <li><a href="">Hand On 3</a></li>
+</ul>
+
+<p>====</p>
+
+<h2 id="data-exploration">Data Exploration</h2>
+
+<p>In the following section we will use the ucsc genome browser’s <a href="http://genome.ucsc.edu/cgi-bin/hgBlat?command=start">online blat</a> to explore a number of example positive and negative fusion transcripts. This part is based on tutorial created by Andrew McPherson 
+The aim of this part is to understand the procedure to validate a fusion transcript</p>
+
+<h2 id="hand-on-1">Hand On 1</h2>
+<p>Now we can take  a look of  Breast cancer cell line. We start to analyze  starfusion results in detail.
+Move on the STAR-FUSION directry of HCC1395 directory.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/fusion/tutorial-fusion-transcript-2017/Results/HCC1395
+
+
+</code></pre>
+</div>
+<p>then uncompress the directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>tar xvfz starfusion.tar.gz 
+
+
+</code></pre>
+</div>
+<p>check the directory:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>ls
+defuse.tar.gz  starfusion  starfusion.tar.gz
+
+</code></pre>
+</div>
+<p>move on the star fusion directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd starfusion/
+</code></pre>
+</div>
+<p>Now look the <strong>starfusion.fusion_candidates.txt</strong> and serarch some fusions:</p>
+
+<p>FROM:
+High-throughput detection of fusion genes in cancer using the Sequenom MassARRAY platform</p>
+
+<p>Maryou BK Lambros, Paul M Wilkerson, Rachael Natrajan, Neill Patani, Vidya Pawar, Radost Vatcheva, Marthe Mansour, Mirja Laschet, Beatrice Oelze, Nicholas Orr, Susanne Muller and Jorge S Reis-Filho</p>
+
+<p><img src="http://localhost:4000/images/table1.png" width="600" /></p>
+
+<p>Please check ERO1L-FERMT2 and CYP39A1-EIF3K</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**(root) um49@m49:~/fusion/tutorial-fusion-transcript-2017/Results/HCC1395/starfusion$ cat starfusion.fusion_candidates.txt |grep CYP39A1|grep EIF3K**
+EIF3K--CYP39A1	170	109	EIF3K^ENSG00000178982.5	chr19:39123318:+	0CYP39A1^ENSG00000146233.3	chr6:46607405:-	0
+
+**(root) um49@m49:~/fusion/tutorial-fusion-transcript-2017/Results/HCC1395/starfusion$ cat starfusion.fusion_candidates.txt |grep ERO1L|grep FERMT2**
+ERO1L--FERMT2	3	2	ERO1L^ENSG00000197930.8	chr14:53138348:-	0FERMT2^ENSG00000073712.9	chr14:53348187:-	0
+
+</code></pre>
+</div>
+
+<p>Use cat and grep for search the other  fusions:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cat starfusion.fusion_candidates.txt |grep ####|grep ######
+</code></pre>
+</div>
+
+<h2 id="hand-on-2">Hand On 2</h2>
+
+<p>Go to Defuse results and  see the file type. Defuse are perl tool very powerfull  create by Andrew McPherson. 
+DeFuse is a software package for gene fusion discovery using RNA-Seq data. The software uses clusters of discordant paired end alignments to inform a split read alignment analysis for finding fusion boundaries. The software also employs a number of heuristic filters in an attempt to reduce the number of false positives and produces a fully annotated output for each predicted fusion.</p>
+
+<p>Move on the STAR-FUSION directry of HCC1395 directory.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/fusion/tutorial-fusion-transcript-2017/Results/HCC1395
+
+
+</code></pre>
+</div>
+<p>then uncompress the directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>tar xvf defuse.tar.gz
+
+</code></pre>
+</div>
+<p>check the directory:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>**(root) um49@m49:~/fusion/tutorial-fusion-transcript-2017/Results/HCC1395$ ls**
+defuse  defuse.tar.gz  starfusion  starfusion.tar.gz
+
+
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd defuse/
+
+
+</code></pre>
+</div>
+<p>The information how to interpeter the output are describe in this <a href="https://bitbucket.org/dranew/defuse#markdown-header-output">page</a></p>
+
+<p>Please go to defuse results and extract the sequnce from PLA2R1-RBMS1.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cat results.filtered.tsv |grep PLA2R1 
+</code></pre>
+</div>
+
+<p>The following two sequence predicted by defuse represent two distinct splice variants
+of the PLA2R1-RBMS1 fusion.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;771050
+AAGATGCAAGAAACTGTGCTGTTTATAAGGCAAACAAAACATTGCTGCCCTTACACTG
+TGGTTCCAAACGTGAATGGATATGCAAAATCCCAAGAGATGTGAAACCCAAGATTCCG
+TTCTGGTACCAGTACGATGTACCCTGGCTCTTTTATCAGGATGCAGAATACCTTTTTC
+ATACCTTTGCCTCAGAATGGTTGAACTTTGAGTTTGTCTGTAGCTGGCTGCACAGTGA
+TCTTCTCACAATTCATTCTGCACATGAGCAAGAATTCATCCACAGCAAAATAAAAGCG
+|CAACAGGAACAAGATCCTACCAACCTCTACATTTCTAATTTGCCACTCTCCATGGAT
+GAGCAAGAACTAGAAAATATGCTCAAACCATTTGGACAAGTTATTTCTACAAGGATAC
+TACGTGATTCCAGTGGTACAAGTCGTGGTGTTGGCTTTGCTAGGATGGAATCAACAGA
+AAAATGTGAAGCTGTTATTGGTCATTTTAATGGAAAATTTATTAAGACACCACCAGGA
+GTTTCTGCCCCCACAGA
+
+&gt;770399
+GGATTGGATTTAATAAAAGAAACCCACTGAATGCCGGCTCATGGGAGTGGTCTGATAG
+AACTCCTGTTGTCTCTTCGTTTTTAGACAACACTTATTTTGGAGAAGATGCAAGAAAC
+TGTGCTGTTTATAAGGCAAACAAAACATTGCTGCCCTTACACTGTGGTTCCAAACGTG
+AATGGATATGCAAAATCCCAAGAGATGTGAAACCCAAGATTCCGTTCTGGTACCAGTA
+CGATGTACCCTGGCTCTTTTATCAGGATGCAGAATACCTTTTTCATACCTTTGCCTCA
+GAATGGTTGAACTTTGAGTTTGTCTGTAGCTGGCTGCACAGTGATCTTCTCACAATTC
+ATTCTGCACATGAGCAAGAATTCATCCACAGCAAAATAAAAGC|GCAACAGGAACAAG
+ATCCTACCAACCTCTACATTTCTAATTTGCCACTCTCCATGGATGAGCAAGAACTAGA
+AAATATGCTCAAACCATTTGGACAAGTTATTTCTACAAGGATACTACGTGATTCCAGT
+GGTACAAGTCGTGGTGTTGGCTTTGCTAGATTTTTTTTTTTTTTTGTGAGAAATA
+</code></pre>
+</div>
+
+<p>Web-blatting <a href="https://genome.ucsc.edu/cgi-bin/hgBlat?command=start">link</a> them will give you the following list of alignments. Please remember  Defuse use hg19.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>   ACTIONS      QUERY           SCORE START  END QSIZE IDENTITY CHRO STRAND  START    END      SPAN
+---------------------------------------------------------------------------------------------------
+browser details 770399           389     1   392   576 100.0%     2   -  160832579 160836405   3827
+browser details 770399           184   392   576   576 100.0%     2   -  161159310 161159999    690
+browser details 770399           155   392   550   576  98.8%    12   -   66628514  66628672    159
+browser details 770399            78   392   547   576  75.0%    12   -   94818206  94818361    156
+browser details 770399            27   361   391   576  96.6%     2   -    5782745   5783131    387
+browser details 770399            22   104   125   576 100.0%     5   +  148444986 148445007     22
+browser details 770399            21   438   458   576 100.0%     6   -  158134531 158134551     21
+browser details 770399            20   265   284   576 100.0%     5   -   84000186  84000205     20
+browser details 770399            20   235   266   576  81.3%     2   +   74143821  74143852     32
+browser details 771050           288     1   290   538 100.0%     2   -  160832579 160833890   1312
+browser details 771050           241   290   538   538  98.4%    12   -   66628424  66628672    249
+browser details 771050           238   290   528   538 100.0%     2   -  161157162 161159999   2838
+browser details 771050            83   290   453   538  75.5%    12   +   56965481  56965649    169
+browser details 771050            39   462   520   538  83.1%     3   +   29804414  29804472     59
+browser details 771050            27   259   289   538  96.6%     2   -    5782745   5783131    387
+browser details 771050            27   441   472   538  96.7%     3   +  192743568 192743603     36
+browser details 771050            25   461   493   538  76.7%     2   -  182283137 182283166     30
+browser details 771050            22     2    23   538 100.0%     5   +  148444986 148445007     22
+browser details 771050            21   336   356   538 100.0%     6   -  158134531 158134551     21
+browser details 771050            20   163   182   538 100.0%     5   -   84000186  84000205     20
+browser details 771050            20     1    24   538  91.7%     1   +  162028403 162028426     24
+</code></pre>
+</div>
+
+<p>Click ‘browser’ for the first alignment for the alignment to the PLA2R1 gene.</p>
+
+<p>Do you expect the genomic breakpoint to be upstream (on the left)
+or downstream (on the right) relative to the aligned sequences?</p>
+<div class="hidden">
+&gt; upstream (on the left)
+</div>
+<p> </p>
+
+<p>Go back and click ‘browser’ for the second alignment for the
+alignment to the RBMS1 gene.</p>
+
+<p>Do you expect the genomic breakpoint to be upstream (on the left)
+or downstream (on the right) relative to the aligned sequences?</p>
+<div class="hidden">
+&gt; downstream (on the right)
+</div>
+<p> </p>
+
+<p>The following sequence is a destruct breakpoint prediction most
+likely associated with the fusion.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;destruct_31240
+TGCAAAAGATCTGGAAAAATGCAGTCTGGTATTTACACATAATTTAAGTTCACAGTGC
+AACTGCTCCCATAACCCTAGCTGAAACTGTCTCTTCTTAGTCATTTTTAATTTTCCAA
+GATAACTTGGCAAAGCTATTGTTGTTGACATAATAAAGACTGGGCAGAAGGCTTACCT
+AGCAAAGCCAACACCACGACTTGTACCACTGGAATCACGTAGTATCCTTGTAGAAATA
+ACTTGTCCAAATGGTTTGAGCATATTTTCTAGTTCTTGCTCATCCATGGAGAGTGGCA
+AATTAGAAATGTAGAGGTTGGTAGGATCTTGTTCCTGTTGCTAAAACAGAAGAGAGTG
+TTGTCCATTAATTTCCAACAGAAGGTGAGATATTTATGTTAACACACCTATTTTTATT
+AGCTACTTTCTTTGCTCAAGTCCTTTTAAAGTACTCAGAACCTCAGAACACCAAAGTC
+ACCCTGGACTCTTGAAAATAGTGTCTGAAGCTTGGACAA[AA]AAAAAGTAATATTAG
+AAAATGAATTCATTTTCTGACAAAAAATTATTGGCTCATCCTCTCAGTTATTTACCCT
+CTCAGTGATTTATAATTCATTGCATATGTCACATGTATTTGAAAAACAATTCAAGGTA
+TCAAGGCATCATTAGTATAAAGATACTGATTTTAGGTATTAGTCTGATTGCTAAGCTT
+TAAGCAGTATAAGCTTTCCTTCCCATTCAAATAGAGAGACACAATATAGGACAAAAGA
+ATACTACAGAGTGCCCAGTGTTTGACAACTAGAAAATTATCCTTTTGATGAGTTCATG
+TCCTTTGCAGGGACATGGATGAAGCTGGAAACCATCAATCTCAGCAAACTAACACATG
+AACAGAAAACCAAACACCGCATGTTCTCACTCATAAGTGGGAGCTGAACAATGAGAAC
+ACATGGACACAGGGAGGGGAACATCACACACTGGGGCCTGTCGG
+</code></pre>
+</div>
+
+<p>Add the breakpoint sequence to the web blat query, click on the
+same alignments as above, and zoom out to see the position of
+the breakpoint relative to the fusion.</p>
+
+<h2 id="hand-on-3">Hand On 3</h2>
+
+<p>Now we want to evaluete the result obtained from JAFFA on the simulated data. Open jaffa result.csv and extract the sequencing and blat the results.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**cd ~/fusion/tutorial-fusion-transcript-2017/Results/JAFFA/Simulazione_50x/**
+**(root) um49@m49:~/fusion/tutorial-fusion-transcript-2017/Results/JAFFA/Simulazione_50x$ cat jaffa_results.csv |grep ETV6**
+"reads_50x","ETV6:NTRK3","chr12",11869968,"+","chr15",87940752,"-",Inf,"169",19,NA,FALSE,TRUE,"Locus_1_Transcript_77/274_Confidence_0.022_Length_8978",1279,"LowConfidence","Yes"
+
+</code></pre>
+</div>
+<p>Now extract thename of the contig of ETV6-NTRK3 for search on fasta file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**(root) um49@m49:~/fusion/tutorial-fusion-transcript-2017/Results/JAFFA/Simulazione_50x$ cat jaffa_results.csv |grep ETV6|awk -F"," '{print $15}'**
+"Locus_1_Transcript_77/274_Confidence_0.022_Length_8978"
+
+</code></pre>
+</div>
+<p>On .fasta exxtract that sequence:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(root) um49@m49:~/fusion/tutorial-fusion-transcript-2017/Results/JAFFA/Simulazione_50x$ cat jaffa_results.fasta |grep -A1  Locus_1_Transcript_77/274_Confidence_0.022_Length_8978
+&gt;reads_50x---ETV6:NTRK3---Locus_1_Transcript_77/274_Confidence_0.022_Length_8978
+GTCCCGGGTCCCCGCGCCGCGCCGCGACCTGCAGACCCCGCCGCCGCGCTCGGGCCCGTCTCCCACGCCCCCGCCGCCCCGCGCGCCCAACTCCGCCGGCCGCCCCGCCCCGCCCCGCGCGCTCCAGACCCCCGGGGCGGCTGCCGGGAGAGATGCTGGAAGAAACTTCTTAAATGACCGCGTCTGGCTGGCCG.......
+
+
+</code></pre>
+</div>
+
+<p>This is the complet sequence:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+&gt;reads_50x---ETV6:NTRK3---Locus_1_Transcript_77/274_Confidence_0.022_Length_8978
+GTCCCGGGTCCCCGCGCCGCGCCGCGACCTGCAGACCCCGCCGCCGCGCTCGGGCCCGTCTCCCACGCCCCCGCCGCCCCGCGCGCCCAACTCCGCCGGCCGCCCCGCCCCGCCCCGCGCGCTCCAGACCCCCGGGGCGGCTGCCGGGAGAGATGCTGGAAGAAACTTCTTAAATGACCGCGTCTGGCTGGCCGTGGAGCCTTTCTGGGTTGGGGAGAGGAAAGGAAAGTGGAAAAAACCTGAGAACTTCCTGATCTCTCTCGCTGTGAGACATGTCTGAGACTCCTGCTCAGTGTAGCATTAAGCAGGAACGAATTTCATATACACCTCCAGAGAGCCCAGTGCCGAGTTACGCTTCCTCGACGCCACTTCATGTTCCAGTGCCTCGAGCGCTCAGGATGGAGGAAGACTCGATCCGCCTGCCTGCGCACCTGCGCTTGCAGCCAATTTACTGGAGCAGGGATGACGTAGCCCAGTGGCTCAAGTGGGCTGAAAATGAGTTTTCTTTAAGCCAATTGACAGCAACACGTTTGAAATGAATGGCAAAGCTCTCCTGCTGCTGACCAAAGAGGACTTTCGCTATCGATCTCCTCATTCAGGTGATGTGCTCTATGAACTCCTTCAGCATATTCTGAAGCAGAGGAAACCTCGGATTCTTTTTTCACCATTCTTCCACCCTGGAAACTCTATACACACACAGCCGGAGGTCATACTGCATCAGAACCATGAAGAAGATAACTGTGTCCAGAGGACCCCCAGGCCATCCGTGGATAATGTGCACCATAACCCTCCCACCATTGAACTGTTGCACCGCTCCAGGTCACCTATCACGACAAATCACCGGCCTTCTCCTGACCCCGAGCAGCGGCCCCTCCGGTCCCCCCTGGACAACATGATCCGCCGCCTCTCCCCGGCTGAGAGAGCTCAGGGACCCAGGCCGCACCAGGAGAACAACCACCAGGAGTCCTACCCTCTGTCAGTGTCTCCCATGGAGAATAATCACTGCCCAGCGTCCTCCGAGTCCCACCCGAAGCCATCCAGCCCCCGGCAGGAGAGCACACGCGTGATCCAGCTGATGCCCAGCCCCATCATGCACCCTCTGATCCTGAACCCCCGGCACTCCGTGGATTTCAAACAGTCCAGGCTCTCCGAGGACGGGCTGCATAGGGAAGGGAAGCCCATCAACCTCTCTCATCGGGAAGACCTGGCTTACATGAACCACATCATGGTCTCTGTCTCCCCGCCTGAAGAGCACGCCATGCCCATTGGGAGAATAGCagTGTGCAGCACATTAAGAGGAGAGACATCGTGCTGAAGCGAGAACTGGGTGAGGGAGCCTTTGGAAAGGTCTTCCTGGCCGAGTGCTACAACCTCAGCCCGACCAAGGACAAGATGCTTGTGGCTGTGAAGGCCCTGAAGGATCCCACCCTGGCTGCCCGGAAGGATTTCCAGAGGGAGGCCGAGCTGCTCACCAACCTGCAGCATGAGCACATTGTCAAGTTCTATGGAGTGTGCGGCGATGGGGACCCCCTCATCATGGTCTTTGAATACATGAAGCATGGAGACCTGAATAAGTTCCTCAGGGCCCATGGGCCAGATGCAATGATCCTTGTGGATGGACAGCCACGCCAGGCCAAGGGTGAGCTGGGGCTCTCCCAAATGCTCCACATTGCCAGTCAGATCGCCTCGGGTATGGTGTACCTGGCCTCCCAGCACTTTGTGCACCGAGACCTGGCCACCAGGAACTGCCTGGTTGGAGCGAATCTGCTAGTGAAGATTGGGGACTTCGGCATGTCCAGAGATGTCTACAGCACGGATTATTACAGGGTGGGAGGACACACCATGCTCCCCATTCACTGGATGCCTCCTGAAAGCATCATGTACCGGAAGTTCACTACAGAGAGTGATGTATGGAGCTTCGGGGTGATCCTCTGGGAGATCTTCACCTATGGAAAGCAGCCATGGTTCCAACTCTCAAACACGGAGGTCATTGAGTGCATTACCCAAGGTCGTGTTTTGGAGCGGCCCCGAGTCTGCCCCAAAGAGGTGTACGATGTCATGCTGGGGTGCTGGCAGAGGGAACCACAGCAGCGGTTGAACATCAAGGAGATCTACAAAATCCTCCATGCTTTGGGGAAGGCCACCCCAATCTACCTGGACATTCTTGGCTAGTGGTGGCTGGTGGTCATGAATTCATACTCTGTTGCCTCCTCTCTCCCTGCCTCACATCTCCCTTCCACCTCACAACTCCTTCCATCCTTGACTGAAGCGAACATCTTCATATAAACTCAAGTGCCTGCTACACATACAACACTGAAAAAAGGAAAAAAAAAGAAAGAAAAAAAAACCCTGTAAGGCAGTTTGGCAAATATATATATATATATATATATTTATATATCTAACTATCTATCAATCTATATCTACAGAGAGTTACCTTCTCTAGTACACAGAGAAGCTGCTGATACAGAAAACCACAAGACTTTAACAACTCAGAAACTCTAAAATATTAATAATACAAAGGAAAATTCCCTTTGACTTAAGCTGTGGCCCATGCTTCTAATGCTACGGCTCTTTGGAGCAGAAGACCTGGACCATGCAGAGAGACAATCTTTGGGATGAGAGCTCTGGGACGGGAGGAGTTAAGGTGGTGCTCAGTCGCTGCTGTGTGTGTCTGGTACCCCGGAAGCTCACCACAGGCACATGTGGGGACTGCATGGCTGTGCTCAGCAAAGAAATGATGCCTGAGCAGGGTCCTTGCCTCCACTTCTTCCCCATTTCCTCCACTTGAGGACAATGTTCTAATTTGTCCATTCTAAAAAGTGTAATCTTGATGCTTTTGGGAATCAATGATGGCACCTACGGGTAAACACAGAACAGACAACCCCACAACACAAAACCATGACAAGAGCTGACAGCATCCATCCTGGGTGTAAGCTTCTTGCTGGAGTTGCAAAGGATGTGTCTTTCTATTCTCAGAACTTAAAGAACTGGACTTTCTGGAGTAAAAGAACCACAGAAGAAAAAATAGCTGAAACCTGAACCCTGCCAAGACACTGCCACCTGTCTTTTCCATCATTGCAAAGATTCCTTGGCCTCACCTCCCACTTTCAGGCCCCTGGGAAGCTTAGGGGGTTAGGAAACAGGTCCCCATGTTATCTTTGAATGTAGACACAGCACGCTTTAGGGTTGCAATAGCAAGAGACTTGGTTGCTTGTAGGTCATTATAACGAATGCCCCCTGGTCCTCTCAGTTTCTCATCCTGCTTCCCTAGATCCTAGACCCCACTTCCTGGGTCTCTACTGAGTCCCAGGTAAACCCCACTGCCAAGGAAGGGAGCCAGGTCTAGTGAGAGGCTGCAGCAGTGAGTGTTTCAGGAAAGCAAGCAGTGGAGTGGGTGAGAGCCAGCAGGGGAGAATCTACTTGGCACCTGTGCCAGGCCCCTTGGCATTCTCCTCACGTTTCCAGCCCCTGGGAGGATTGATGCATCTGCCTTTGAGCTGTTGTGAAAACGCAGGGGCTGAGAAATCACTTTTGTGGGCTGGGGTAGGGGGAAGGGCTGAGGCTTCTCTGGGAGATGTCCAATGAGCGGCCAGTGCTGCAGGCTTGGAATCTTAATGAGGCCTGAGCCCTGACCGGAGAGAGGGAAGGAAACATCTGTGCTGGGGCCTGCTCCCTCTGCCCCAGCACTGGGGAATCACTGCCTTCCTGGCTGCTGCCACATACCACAGTGGGGCCGACCTCTGGGCCTCCCTGTCACATGAAACATGGAAGCCAACAGCCTGGCCCCACAGATCTCCTCTGCTGGAGAGGAGAGGATGTGTTCCTCCCAGGCCACGGGGCCCCTCTGCCTTGCCCCAAGCACAGAGCTACCTAAGGGACTGACCTTTGCCACACTGGAGCTCACCTCCCGGGTGCCTCTGGCCTACCCTTTTCCCTGCCAGCTGAAGAGACTGCCGGCAGCCTGGACGTCCTGGTTAGCTGAAGGCAGCTGAAATGTGGGCCTCCCTATGTGGGGTTTAGTACTGAATTATGTGTTTGTGGTTTTGCTTCTTTTTGTAGACCCACAAATATTTTTATTTGAATAGTAAAGAGCTGTGCTCAGATTGTAGCCATGGTTGGGATTTGGGATCAACGAGGCTGGTTAGCTGGACTGGGAGGGGAGGCAGGTGAGATGGGAATTTGGTGTTGGTTTTCTCACTGTGCTGTGCTCCTAGCCCCTGAGGACTTTGCAGGAAAGCTGTTTGGATTGACCACCTCAAGGAACTCCTTTGCTGTCCTATGACAATTACTCCTCTTGTCTTTCCACCTAGAGGACCGTTATGCCGGGGCTGTGAGTTCTGGCTGAAGCTGCACAATCTGGCTTTGATCTGGGTAGCTAAGAACAGGTGTTCAGGGAGGGCATGGTCTGGAGGCGCCTGAGGGAAAAGTATCTTCTGGTTAGAAGTGAAGCACCAATGCTCCTGTTGCTTCCCTTCTCCCATATCCTCTCCTGAACAAACACTGTGTGGCTTCTGTCTTCTTGGCTGTGTGTTTCAAAACTGATAGTCACTGATGGGCTGGGAAGAAGCAGGAGAAGAACTGGGTTGGAGATGGGTGGAAAACTGGGAATAAGGACCATGCTATGGTTTTATCTTCAGGGCACTGATTCATCATGGCCTAATGAAAGAAGGTGATTCCTTGGGGGAACAAGAAGCACTGAAGGAGACCGCAGTTGTCAGATTGCTGCCACCTTAGGCCCACGGGCTTTCACGCTGATCTTGGGGTCATGTTCTTACTGTGTCCATTGTAAGCAGCTGGCTGTGGAAGAGTGCCAGAGAGAGAGGGGCAGAGCAGGGAAGGGTAGCGAGGGAAGATATATTACTTTGATATATTAGCCTTGGCAGATTAAAAAAAAAAGATTTATTTTGGAGAGTAAAGGAGGCAGAAAATAGGGCCATGGAAAATGCAGGGTACACTATGGCTCTGGGGAGTGTGGCATGTACTGGGACACACCTGTCCCTCCTATATTGGGACAGGACTGATAAGGCTTAGTACACTGTATCTTAATTTCCCCATCTGCAGAATAAGGGGTACACCTGCTAATCTCTGGCCCCTTCTAGCTCTGAGTTCTTAGATTCTGACAACGTTGTGTCACTGTGCCATTTTTCTCAATACCATTCTGGAATGGCAGGACAGCCTTGCATAGGTGGGGGGCAGTTGCCGCTGAAGGCTCACTGGGCCTGGGCAAGGCTGAGTTCCAATAAGACACTCCTCTCCTTCTTTGCCCCTTGTCTCAACATTTCGGAGTCTGAAGTGTCTGAGACGACTGTAAGCCAGGAGGGGAGCATTTGGTCGGCTTCCCATCCTGGCATTCCTACATACCAGAAAAGCACTGTCGACGGTCCATTTATTTATTTATTTATGAAGAGCCTAATGTGATGAAATGTGTTGTGAAATGACATCCTATTAGCCAATATGGCCACTCCAGTTCATTTCACCCTCATTTTCCCATACCAAAGTCCACCTTTTAGAAGACCATGTCACATCGCCTCTGAGAGCTTAGCTTTGAAGTGAGCTCTTTTGTGTCTTTTGATGAACGCTCCAGGGCACCCAGGCTGGTCTCTCTGCCATGCCAACCTCACCGGATCCTCTCCTGGACTGAGTGAGAGTGACCTGCTGTTGGGTGTCCACCTTGGAGTAGGGTGTTGTGGCCATGGGACCTCCCAATTCTTCTTTCTTTGGATGTGAACCTAACTCTGCCCTCTAATGATATCCCTGAACTCTGAGGGGACCTTGGGCATCACTGAACCTCCTCTAGTCAAGAGACAAGAAAAAGGAGGTGCTGCTTCCTCCATTCAGCAGATCATGCACAAATTACTCCTAGACAGAGGCTTCCCAATTGAGGCAAAGGATCTTTGGTCCTTCTGGGTTCAGGTTGAACATTAATGTTCTTCTCTAGTGATGCCTACTTTGCGGAATACACTAGTGCAAGTCATTTTGGTGCTAAATACTGCAGAAACCAACACCAACGGGAGAGCTGTCAGCCAGCTTCTGGGGCTGCACGAGACTCAACTCAGAAGTAGAAGTGAGTCAGCCATGCCGGGAGAGTACAGGGTGCATTGGAAGTTAAGTAGAAAAGTGGCAGGGTGAAAAGACCAGCAAAATTTCTGATTTTGCTATTAGTTATCCACGTGGCCTTGGCCAAATCAGCTTATTTCTCATTTGAGACGTTTAAGAGGTTTGTATAGATATTTTTAGAGTCCTTTTCATTTTTTTAAAGCTAGGTTCTGGTCCCACCTGATATATATGTACTTGCTTGTTAAAAATAAGAGATGAAGTGAAAGATAAGGAAGGAGACGAAGAAAAGTTACCAATGGCAAAGGATTGATTATAGAAGACAATGAAAGAAGGCCTGGTGACTGGTAGATTTGAGGAATATTGTACAGGGAGCCAGGCAGACAAGCCAGAGACTTCATTTTTATGCTCTTCACAGGAGGTCACTGGCCTAGCCACTTGCCTGCGTTTCACCAGGCTGTTCCCCTCAGCTAGTCAACCTTCCCTGTTCAAAACCAACATGCTAACACTTGGCAGAAACTATTCCAAGATATGGAGAGAGGCCTGCCCATCTCTCATGCAGGCCACTGGAAATCAACTCTGGGTCAAAACCGACAAGATTTTTATCTTTTAATGCTTATTGTAAGAGGCCGGGATGTTTGAAAGAGGGCAGCGTCTTAAGTTGCAGACTATTCACCAAAGTCCTTTTCTATTCAGGAATGACTAATGACTTTCTTTGTTCCCCTTTTCCAAACCAAACAGCAGCAGTATTACCTTGACTCCAAAGTACAGTGATTGCAATGGACAGTCTTGAGATTAAGGGTCTTTTTAGTGCTTTGCTCGGAATCTGGAGCAAGGAAATGTCTAGGGATGTTTGTTGAATGAACCCACCTGCCAGCAGTCCAGAGAGCTGTCCCAAAGGCCCCTGAGATGTCTATTGTCTGCTTTGGTAGGGAGCCAACCTGCTAGAAGACTCAAGGGCATTTGCCTTAGAGAGAAAAAAAAATGGCACATTTAGTTCCGGGCTTGGGTGCTGAAGTCACTGTGTTTTTGGCTCCTGAAGCTCCACTTCCTTTTTTCATACCAAATAAATTGTTTTGGCCAATATTTAAGGATTTAAATATTTAAGGTTTTGAAGGAAAATTCCAAGTTTATGCATCATTATTAAGACATCAATATGGGCTTGGGAAAATGTTTTGGTGTTGCTTAATAATACTGGGAGTGTCTTCTAAAGAAAGTATACATATATGTACGTTGTGTGTTTATTTCTATATATTGGATTGGAATGGCATCAAAGAAGGCCTGTTTGAAGTCAGCAAATTGATTTCAATTTGGGATTCTCTTTTAGCCTTACCGTTCTTGGGGATAAGAAATCTGGAGATGAACTGGCCTCAGAAACATTCAGGAAGATTACGATGGGAAATCTGTCATCTTGTAAAGTTGGATCATTTGGTGCTCTCTGAACTAAATTATGCTGACTAACATTCTGAGCATCTGAAAATCATTCTTCCTGGTTGCCTGATAGATGACCACACAGGAGTCATTTCTATCACATCTTATTTGGGGGTTGGTATAGACGCCACCAGCACTGCAGGGAAAACCACCCCCTAGGAGGGGTGAGACAGAGAGAATGTGAGATTTTGATCATTGATTGCTCTTTCTGAAAGGCACTGCTGACCATAGTAGGTGTGGTGAATGTTTGTGTCACTGCATTGGGTATTAGAACTTTTGCTCTGAGCATGGGCTGCCCTACCCTGAAGAGCTGAATCTTGGCTTCTGACAGAAGCTCTGCATGACTCATTCTCCTCAAGCATATTTTCCTTATTTTCCTATGAAAGTATCTATAGTTTGCAACAAGAACTGTCTTTGGTTCAAGTGTCAGTGTACTAGAATAGATGCTTTTCTGTGAGACCTGTGGAGGTTGGATTGGGGTGGGGGGTGTTCCTTCAAAGTACTTGGAATTCTTTATCAAAGAAATAAAACTCAGATTCTCTTCTTTCTAGTTTACTTCTAAGTTCCAAATTTAAAACAAGACCCAGTTTGACATTTGCAGTAGGAGATAATGTCTTGAACCAGTGAGCTTGGCTATCTTTCTTTCATCATAGGGAGGCAGGGCAGTAAGTTGTATTAATTTTTCCTAATCACCCAGGCAAATATTGCTTTTTGTTCAGTGTCGTGACCCACATTCATAGCTTGCAGGGGATACTTCTAGCTGACAAAGCTGGAAGTTTCTAATAGAAGATGTATCAAGATAACAGAGGTGAGGAAAGGCCTGTTGAACATCTACTTCTGAGAATCATTGAGGCACTCAGGTCTTGCTTTTCAGTTTAGTATCTTACAAAAGGAGTTGGTTTCTTCTCATTTTAGCAATGATAAATTTAGACATCTTTTTTGAAAGGCCAAAGGTAGATTGAGAGCTCAAATACTTACGGTGTACTCTGACAGTCTTTTATTCTATTTTTCAAGACTTATTTTATATATACATATTTTTTATTTCCATAGGTTATTGGGGAACAGGTAGTGTTTGGTTACATGAGTAAGTTCTTTGGTGGTGATTTGTGAGATTTTGGCACACCCATCACCCAGGCAGTATGCACCATATTTGTAGTCTTTTATCCCTCACTCCCTTCCCACACTTTCCCCCTGAGTCCGCAGAGTCCATTGTGTCATTCTTATACCTTGACATCCTCACAGCTTAGCTCCCACATATCAGTGAGAACGTACGATGTTTGGTTTTCTATTCCTGAATTGCTTCACTTAGAATAGTGGTCTCCAATCTCACCCAGGCCTCTTCGAATGCCATTAATTCATTCCTTTTTATGGATGAGTAGTATTCCATCATACATATATATGTTTGTGTGTGTGTGTGTGTGTGTGTGTGTGGTGTGTGTGTGTGTGTGTGTGTGTGGGTGTGTGTGTGTGTGTGTGTGTGTGGGTGTGTGTGT
+</code></pre>
+</div>
+
+<p><img src="http://localhost:4000/images/ETV6.png" width="600" /></p>
+
+<p>Immagine you found this fusion on your sample for the first time  and you want to know if in other tumors are founded. What can you do?</p>
+
+<p>Please go to this site:</p>
+
+<pre><code class="language-http://54.84.12.177/PanCanFusV2/```">
+and search information on the fusion.
+
+
+
+## Hand On 4
+
+Please evaluete FUS-DDIT3 from defuse results on Simulation 50X. Use IGV for see reads spanning or encomppassing.
+
+</code></pre>
+<p>cd ~/fusion/tutorial-fusion-transcript-2017/Results/Defuse/</p>
+
+<p>```
+then open IGV and look that fusion reads.</p>
+
+<p><code class="highlighter-rouge">http://www.scienziofilia.altervista.org/dati/Chimeric_sort.bam</code></p>
+
+<p>Write the name of the genes using a space and search the encompassing reads.</p>
+
+<p>After that search information on this fusion on [cosmic][http://cancer.sanger.ac.uk/cosmic/fusion]</p>
+
+<h1 id="well-done">Well done!!!</h1>
+
+<p><img src="http://localhost:4000/images/compl.jpeg" width="600" /></p>
+
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  <!--<footer>
+        <p>This project is maintained by  Maurizio Polano<br/></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+-->
+  </body>
+</html>

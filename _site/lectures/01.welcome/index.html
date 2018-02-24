@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Welcome and introduction &middot; Training Course on Fusion transcript detection
+    
+  </title>
+
+  <!-- CSS -->
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/training_fusion/public/css/poole.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/syntax.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/lanyon.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/training_fusion/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/training_fusion/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="/training_fusion/js/toc.js"></script>
+</head>
+
+
+  <body class="theme-base-07">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Fusion training</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/training_fusion/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="http://localhost:4000/lectures/01.welcome/">Welcome and introduction</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">General installation for Fusion detection tutorial</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/03.jaffa/">Jaffa configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/04.jaffa.tutorial/">Tutorial  jaffa program</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/05.starfusion/">STAR-FUSION configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.starfusion.tutorial/">Tutorial star-fusion</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/07.exploration/">Hand on on exploration results</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/08.fusioncather/">Fusioncatcher</a>
+        
+      
+    
+
+    <!--<a class="sidebar-nav-item" href="/archive/v1.2.zip">Download</a>-->
+    <a class="sidebar-nav-item" href="https://bioinfo-dirty-jobs.github.io/training_fusion/">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.2</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://localhost:4000/" title="Home">Training Course on Fusion transcript detection</a>
+            <!--<p></p><small>Welcome and introduction</small></p>-->
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Welcome and introduction</h1>
+  <p class="note">Agenda, resources and other useful information</p>
+  
+    <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+  
+  <h2 id="welcome">Welcome!</h2>
+
+<p>In this part of the course, we will present the main steps that are commonly used to process and to analyze cancer sequencing data for detect fusion transcript genes. We will focus on RNA-seq data and we will provide command lines that allow detecting fusions transcript genes using some of the most used programs.</p>
+
+<p><img src="http://localhost:4000/images/miniom.jpeg" width="600" /></p>
+
+<hr />
+<h3 id="learning-outcomes">Learning outcomes</h3>
+
+<p>After this course you should be able to:</p>
+
+<ul>
+  <li>install  an use  software for detect fusion transcript</li>
+  <li>understand the main process for detect fusion genes and detect some false positive</li>
+  <li>choose the right tools for the data you have</li>
+</ul>
+
+<p>and you will be exposed to these software:</p>
+
+<ul>
+  <li><strong>STAR-FUSION</strong> [https://github.com/STAR-Fusion/STAR-Fusion/wiki]</li>
+  <li><strong>JAFFA</strong> [https://github.com/Oshlack/JAFFA/wiki]</li>
+  <li>Fusioncather [https://github.com/ndaniel/fusioncatcher]</li>
+  <li>PRADA [http://bioinformatics.mdanderson.org/main/PRADA:Overview]</li>
+  <li>Defuse [https://github.com/FusionInspector/FusionInspector]</li>
+</ul>
+
+<p>Jaffa can be tested in our enviromnt with 16G RAM. results (STAR-FUSION we can se the results usin my cluster).</p>
+
+<p><img src="http://localhost:4000/images/p3.jpeg" width="600" /></p>
+
+<hr />
+<h3 id="we-assume-you-are-familiar-with">We assume you are familiar with:</h3>
+
+<ul>
+  <li>Next generation sequencing in general</li>
+  <li>RNA-seq</li>
+  <li>bash</li>
+</ul>
+
+<hr />
+<h1 id="agenda">Agenda</h1>
+
+<p><em>*September 7</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Lecture/Practical</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Basic information</strong></td>
+      <td>Practical</td>
+    </tr>
+    <tr>
+      <td><strong>JAFFA</strong></td>
+      <td>Introduction</td>
+    </tr>
+    <tr>
+      <td><strong>JAFFA</strong></td>
+      <td>Practical</td>
+    </tr>
+    <tr>
+      <td><strong>Star-fusion</strong></td>
+      <td>Lecture/Pratical</td>
+    </tr>
+    <tr>
+      <td><strong>Exploration data from other softwares like defuse</strong></td>
+      <td>Practical</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  <!--<footer>
+        <p>This project is maintained by  Maurizio Polano<br/></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+-->
+  </body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Jaffa configuration &middot; Training Course on Fusion transcript detection
+    
+  </title>
+
+  <!-- CSS -->
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/training_fusion/public/css/poole.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/syntax.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/lanyon.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/training_fusion/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/training_fusion/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="/training_fusion/js/toc.js"></script>
+</head>
+
+
+  <body class="theme-base-07">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Fusion training</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/training_fusion/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/01.welcome/">Welcome and introduction</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">General installation for Fusion detection tutorial</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="http://localhost:4000/lectures/03.jaffa/">Jaffa configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/04.jaffa.tutorial/">Tutorial  jaffa program</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/05.starfusion/">STAR-FUSION configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.starfusion.tutorial/">Tutorial star-fusion</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/07.exploration/">Hand on on exploration results</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/08.fusioncather/">Fusioncatcher</a>
+        
+      
+    
+
+    <!--<a class="sidebar-nav-item" href="/archive/v1.2.zip">Download</a>-->
+    <a class="sidebar-nav-item" href="https://bioinfo-dirty-jobs.github.io/training_fusion/">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.2</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://localhost:4000/" title="Home">Training Course on Fusion transcript detection</a>
+            <!--<p></p><small>Jaffa configuration</small></p>-->
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Jaffa configuration</h1>
+  <p class="note">Jaffa</p>
+  
+    <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+  
+  <h1 id="jaffa-">JAFFA !</h1>
+
+<ul>
+  <li><a href="">Run JAFFA</a></li>
+  <li><a href="">Software requirements</a></li>
+  <li><a href="">Running Mode</a></li>
+</ul>
+
+<p>JAFFA is a multi-step pipeline that takes either raw RNA-Seq reads, or pre-assembled transcripts, then searches for gene fusions.
+It will output the names and locations of candidate gene fusions along with the cDNA sequence of their breakpoints.</p>
+
+<p>JAFFA is based on the idea of comparing a transcriptome (e.g. in a cancer sample) against a reference transcriptome. In this way, it is a transcript-centric approach rather than a genome-centric approach like other fusion finders. In validation studies, JAFFA performed well over a range of read lengths - from 50bp to full-length transcripts and on single and paired-end reads. For more information please see one of the wiki pages below</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir REF_JAFFA
+cd REF_JAFFA
+wget -r -nd http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.chromFa.tar.gz
+
+tar xvf hg38.chromFa.tar.gz
+cat chroms/chr*.fa &gt; hg38.fa
+rm -rf chroms/
+wget -r -nd -np https://drive.google.com/open?id=0B1FwZagazjpcd2RDVmtiazVWVk0
+tar xvfz JAFFA_REFERENCE_FILES_HG38_GENCODE22.tar.gz
+
+
+
+</code></pre>
+</div>
+<p>By default JAFFA will be expecting this file to be in the root of the JAFFA code directory. You can either copy it there, create a symbolic link to it (ln -s <path_to_hg38> <path_to_JAFFA_directory>), provide the path to your hg38.fa file in the pipeline file JAFFA_stages.groovy or pass it when you run the JAFFA command. Note that JAFFA expects the UCSC version of the genome.</path_to_JAFFA_directory></path_to_hg38></p>
+
+<h2 id="run-jaffa">Run JAFFA</h2>
+
+<h3 id="input-file">Input file</h3>
+
+<p>The input to JAFFA should be either reads which have been gzipped. i.e. with an ending like “.fastq.gz” or a fasta file of contigs with an ending like “.fasta”. JAFFA assumes there is one files (single-end) or pair of files (paired-end) per sample.</p>
+
+<h3 id="running">Running</h3>
+
+<p>Create and change into the directory where you intend the output files of JAFFA to be placed. You then have a choice of three JAFFA running modes: Assembly, Hybrid and Direct. Which mode to use will depend on your read length.
+When to use which mode?</p>
+
+<ul>
+  <li>For reads <strong>shorter than 70bp</strong> use the Assembly mode. The reads are too short to be used as contigs directly.</li>
+  <li>For <strong>longer reads ( 70 and 95 bp)</strong>, the hybrid mode is the most sensitive. However, because it involves assembly, it requires a lot of memory and CPU time. If computational resources are a constraint, we recommend using the direct method.</li>
+  <li>For <strong>long reads (e.g. 100 bp up)</strong>, there is no advantage in assembling, therefore we recommend the direct mode.</li>
+</ul>
+
+<h1 id="running-mode">Running Mode</h1>
+
+<h2 id="assembly">Assembly</h2>
+
+<p>JAFFA will call Velvet and Oases to assemble the reads. It will then search for fusions from amongst the assembled contigs.</p>
+
+<p>Bpipe will giving you information about each stage in the pipeline as it run it. Let go through these in some detail.</p>
+
+<p><strong>Stage run_check</strong>- This checks that all the required software is installed. If bpipe fails here, you may need to double check the installation.
+Next bpipe with create two branches, one for each sample set. In the case of this demo, there will be one for MCF-7 and one for BTF-7. These branches will be run in parallel. You can control the number of branches running in parallel with the bpipe -n option. For each branch, these stages are run:
+<strong>Stage make_dir_using_fastq_names.</strong>  Create a directory for each sample.
+** Stage prepare_reads ** Now you will see that bpipe is running Trimmomatic. With JAFFA’s default setting, no trimming is actually performed, but the fastq files will be unzipped. It is possible to control the amount of trimming. See JAFFA_stages.groovy. During this step you may also see that JAFFA is mapping reads. This is used to filter out any pairs which map to intronic or intergenic regions, or chrM.
+<strong>Stage run_assembly.</strong> Next the reads will be assembled. The assembly involved running velveth, velvetg then oases, 6 times: once for each kmer 19, 23, 27,31 and 35, and these once to merge. If something goes wrong with the pipeline, it is often during this stage. For example you will need to ensure that your machine has enough RAM (especially if you are running samples in parallel). The assembly can be adjusted in the JAFFA script assemble.sh. In this demo the assembly will be fast, but in practice this stage can take a long time.
+<strong>Stage align_transcripts_to_annotation.</strong> The assembled contigs will then be aligned to the reference transcriptome (GENCODE by default). BLAT is used for this.
+<strong>Stage filter_transcripts.</strong> Preliminary filtering will be performed (this uses an R script).
+<strong>Stage extract_fusion_sequences.</strong> The fasta sequences of the preliminary candidate will be extracted
+<strong>Stage map_reads.</strong> Reads are mapped back to the candidate fusion sequences
+<strong>Stage get_spanning_reads.</strong> JAFFA will count the number of spanning read and spanning pairs over the break point of the fusions
+<strong>Stage align_transcripts_to_genome.</strong> The candidates will be aligned to the human genome using BLAT
+<strong>Stage get_final_list.</strong> A second filtering of the candidates is done using the genomic alignment and read coverage data. A file ending in .summary will contain all the candidates fusions identified by JAFFA
+<strong>Stage compile_all_results.</strong> The summary information from all samples is merged. A fasta file of candidate fusions from all samples is created.</p>
+
+<p>If everything runs smoothly, you should see two new files created in your working directory: jaffa_results.csv and jaffa_results.fasta. See OutputDescription for a description of the content of these files.</p>
+
+<h2 id="direct">Direct</h2>
+
+<p>JAFFA will map reads to the known reference transcriptome and extract reads which do not map. It will then search for fusions from amongst the unmapped reads.</p>
+
+<p>You’ll see a few different stages in this pipeline, compared to the previous:</p>
+
+<p><strong>Stage cat_reads</strong> . Concatenate the paired-end reads into a single file.
+<strong>Stage remove_dup</strong> . Remove duplicate reads.
+<strong>Stage get_unmapped.</strong> Map the reads to the reference transcriptome and extract the reads that do not map.</p>
+
+<h2 id="hybrid">Hybrid</h2>
+
+<p>This is a combination of the previous two modes. First JAFFA will call Velvet and Oases to assemble the reads. It will then search for fusions from amongst the assembled contigs. Next it will map reads to both the known reference transcriptome and the assembled transcriptome. It will then search for fusions from amongst the unmapped reads.</p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  <!--<footer>
+        <p>This project is maintained by  Maurizio Polano<br/></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+-->
+  </body>
+</html>

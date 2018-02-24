@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Tutorial star-fusion &middot; Training Course on Fusion transcript detection
+    
+  </title>
+
+  <!-- CSS -->
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/training_fusion/public/css/poole.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/syntax.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/lanyon.css">
+  <link rel="stylesheet" href="/training_fusion/public/css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/training_fusion/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/training_fusion/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="/training_fusion/js/toc.js"></script>
+</head>
+
+
+  <body class="theme-base-07">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Fusion training</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/training_fusion/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/01.welcome/">Welcome and introduction</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">General installation for Fusion detection tutorial</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/03.jaffa/">Jaffa configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/04.jaffa.tutorial/">Tutorial  jaffa program</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/05.starfusion/">STAR-FUSION configuration</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="http://localhost:4000/lectures/06.starfusion.tutorial/">Tutorial star-fusion</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/07.exploration/">Hand on on exploration results</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/08.fusioncather/">Fusioncatcher</a>
+        
+      
+    
+
+    <!--<a class="sidebar-nav-item" href="/archive/v1.2.zip">Download</a>-->
+    <a class="sidebar-nav-item" href="https://bioinfo-dirty-jobs.github.io/training_fusion/">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.2</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://localhost:4000/" title="Home">Training Course on Fusion transcript detection</a>
+            <!--<p></p><small>Tutorial star-fusion</small></p>-->
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Tutorial star-fusion</h1>
+  <p class="note">STAR-FUSION</p>
+  
+    <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+  
+  <h1 id="tutorial-with-data">Tutorial with Data</h1>
+<hr />
+
+<ul>
+  <li><a href="">Introduction run</a></li>
+  <li><a href="">Hands On (1): Starting from junction file </a></li>
+  <li><a href="">Hands On: Complete process on Cloud </a></li>
+  <li><a href="">Hands On (3)</a></li>
+</ul>
+
+<p>======</p>
+
+<p>First of all we need to connect with the virtual machine. To achieve this we need to use terminal (if you use linux) or <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PUtty</a> or <a href="http://mobaxterm.mobatek.net/download.html">mobaxterm</a></p>
+
+<p><img src="http://localhost:4000/images/FirstStep.jpg" width="400" /></p>
+
+<p>Connect with the virtual machine:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>      **ssh -X nomeutente49@m49.lsb.biocomp.unibo.it**
+X11 forwarding request failed on channel 0
+Linux m49.lsb.biocomp.unibo.it 4.9.0-3-amd64 #1 SMP Debian 4.9.30-2+deb9u3 (2017-08-06) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Sep  4 10:10:54 2017 from 172.16.197.254
+um49@m49:~$ 
+
+
+</code></pre>
+</div>
+
+<p>Then we move on the directory of the tutorial</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**cd fusion/tutorial-fusion-transcript-2017/**
+um49@m49:~/fusion/tutorial-fusion-transcript-2017$
+
+</code></pre>
+</div>
+<p>then we aply ls -ltr on the directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**(root) um49@m49:~/fusion/tutorial-fusion-transcript-2017$ ls -ltr**
+RAW  README.md  Results  scripts
+
+
+### Introduction run
+---
+
+
+We need to detect fusion trascript of BT474 cells. Here we use only a small part of fastq. 
+
+The virtual machine dimension not allow to run completely this tutorial. For this reason we use the kick start mode. This mean we ALIGN with STAR and create Chimeric.out.junction.
+From this file we star tu use STAR-FUSION to filter fusion. 
+
+This code are only for teach purpose. **Do not execute.** Here I present the way to align data and create Chimeric.out.junction and the run STAR-FUSION.
+
+
+
+
+</code></pre>
+</div>
+<h1 id="do-not-run">do NOT run</h1>
+<p>STAR –genomeDir  ref_genome.fa.star.idx/ \
+–readFilesIn RAW/BT474-demo_1.fastq.gz RAW/BT474-demo_2.fastq.gz 
+–twopassMode Basic
+–outReadsUnmapped None
+–chimSegmentMin 12 
+–chimJunctionOverhangMin 12 
+–alignSJDBoverhangMin 10 
+–alignMatesGapMax 100000 
+–alignIntronMax 100000<br />
+–chimSegmentReadGapMax parameter 3 
+–alignSJstitchMismatchNmax 5 -1 5 5 
+–runThreadN 3 –limitBAMsortRAM 31532137230 
+–outSAMtype BAM SortedByCoordinate 
+–readFilesCommand zcat</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+Now we can run STAR-FUSION 
+
+</code></pre>
+</div>
+<h1 id="do-not-run-1">do NOT run</h1>
+<p>STAR-Fusion –genome_lib_dir ctat_genome_lib_build_dir 
+-J Chimeric.out.junction 
+–left_fq 
+RAW/BT474-demo_1.fastq.gz 
+–right_fq RAW/BT474-demo_2.fastq.gz 
+–output_dir Fusion_star_kickstart_BT474</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+NOW it is your turn:
+
+### Hands On (1): Starting from junction file
+
+
+Unfortunately is it not possible to run all the steps in our virtual machine but we can simulate kickstart analisys.
+
+If you do not activate the enviroment: please activate:
+
+</code></pre>
+</div>
+<p>source /opt/conda/bin/activate</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Then  creat the lin with the database of the star-fusion:
+
+</code></pre>
+</div>
+<p>export STAR_database=/nfs/fusion/GRCh37_gencode_v19_CTAT_lib_July192017/ctat_genome_lib_build_dir</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>If you want you can investigate the directory
+
+</code></pre>
+</div>
+<p>ls -ltr $STAR_database/</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+Now move on the **Results/STAR-FUSION** directory
+
+</code></pre>
+</div>
+
+<p>$ cd ~/fusion/tutorial-fusion-transcript-2017/Results/STAR-FUSION/</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>STAR-Fusion --genome_lib_dir $STAR_database  -J Chimeric.out.junction  --output_dir test_kickstart
+
+</code></pre>
+</div>
+
+<p>This  procedure create many files.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**[centos@pol-produ test_kickstart]$ ls**
+star-fusion.filter.intermediates_dir                   star-fusion.fusion_candidates.preliminary.wSpliceInfo.ok
+star-fusion.fusion_candidates.final                    star-fusion.predict.intermediates_dir
+star-fusion.fusion_candidates.final.abridged           star-fusion.STAR-Fusion.filter.ok
+star-fusion.fusion_candidates.preliminary              star-fusion.STAR-Fusion.predict.ok
+star-fusion.fusion_candidates.preliminary.wSpliceInfo
+
+</code></pre>
+</div>
+<p>but in your server you can see this error:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+      LANGUAGE = (unset),
+      LC_ALL = (unset),
+      LC_MEASUREMENT = "it_IT.UTF-8",
+      LC_PAPER = "it_IT.UTF-8",
+      LC_MONETARY = "it_IT.UTF-8",
+      LC_NAME = "it_IT.UTF-8",
+      LC_ADDRESS = "it_IT.UTF-8",
+      LC_NUMERIC = "it_IT.UTF-8",
+      LC_TELEPHONE = "it_IT.UTF-8",
+      LC_IDENTIFICATION = "it_IT.UTF-8",
+      LC_TIME = "it_IT.UTF-8",
+      LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+CMD: mkdir -p /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/TEST_STAR
+* Running CMD: /opt/conda/lib/STAR-Fusion/util/STAR-Fusion.predict  -J /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/Chimeric.out.junction  --genome_lib_dir /nfs/fusion/GRCh37_gencode_v19_CTAT_lib_July192017/ctat_genome_lib_build_dir  --min_junction_reads 1  --min_sum_frags 2  --min_novel_junction_support 3  -O /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/TEST_STAR/star-fusion 
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+      LANGUAGE = (unset),
+      LC_ALL = (unset),
+      LC_MEASUREMENT = "it_IT.UTF-8",
+      LC_PAPER = "it_IT.UTF-8",
+      LC_MONETARY = "it_IT.UTF-8",
+      LC_NAME = "it_IT.UTF-8",
+      LC_ADDRESS = "it_IT.UTF-8",
+      LC_NUMERIC = "it_IT.UTF-8",
+      LC_TELEPHONE = "it_IT.UTF-8",
+      LC_IDENTIFICATION = "it_IT.UTF-8",
+      LC_TIME = "it_IT.UTF-8",
+      LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+CMD: mkdir -p /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/TEST_STAR/star-fusion.predict.intermediates_dir
+-parsing GTF file: /nfs/fusion/GRCh37_gencode_v19_CTAT_lib_July192017/ctat_genome_lib_build_dir/ref_annot.gtf
+-building interval tree for fast searching of gene overlaps
+-parsing fusion evidence: /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/Chimeric.out.junction
+-mapping reads to genes
+-outputting fusion candidates to file: /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/TEST_STAR/star-fusion.fusion_candidates.preliminary
+* Running CMD: /opt/conda/lib/STAR-Fusion/util/append_breakpoint_junction_info.pl /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/TEST_STAR/star-fusion.fusion_candidates.preliminary /nfs/fusion/GRCh37_gencode_v19_CTAT_lib_July192017/ctat_genome_lib_build_dir &gt; /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/TEST_STAR/star-fusion.fusion_candidates.preliminary.wSpliceInfo
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+      LANGUAGE = (unset),
+      LC_ALL = (unset),
+      LC_TIME = "it_IT.UTF-8",
+      LC_MONETARY = "it_IT.UTF-8",
+      LC_ADDRESS = "it_IT.UTF-8",
+      LC_TELEPHONE = "it_IT.UTF-8",
+      LC_NAME = "it_IT.UTF-8",
+      LC_MEASUREMENT = "it_IT.UTF-8",
+      LC_IDENTIFICATION = "it_IT.UTF-8",
+      LC_NUMERIC = "it_IT.UTF-8",
+      LC_PAPER = "it_IT.UTF-8",
+      LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+[fai_load] build FASTA index.
+[fai_build] fail to write FASTA index /nfs/fusion/GRCh37_gencode_v19_CTAT_lib_July192017/ctat_genome_lib_build_dir/ref_genome.fa.fai
+[fai_load] fail to open FASTA index.
+Could not load fai index of /nfs/fusion/GRCh37_gencode_v19_CTAT_lib_July192017/ctat_genome_lib_build_dir/ref_genome.fa
+Error, command: samtools faidx /nfs/fusion/GRCh37_gencode_v19_CTAT_lib_July192017/ctat_genome_lib_build_dir/ref_genome.fa chr17:38243092-38243108 died with ret 65280 at /opt/conda/lib/STAR-Fusion/util/append_breakpoint_junction_info.pl line 148, &lt;$fh&gt; line 2.
+Error, cmd: /opt/conda/lib/STAR-Fusion/util/append_breakpoint_junction_info.pl /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/TEST_STAR/star-fusion.fusion_candidates.preliminary /nfs/fusion/GRCh37_gencode_v19_CTAT_lib_July192017/ctat_genome_lib_build_dir &gt; /home/um49/fusion/tutorial-fusion-transcript-2017/Result/star_fusion/TEST_STAR/star-fusion.fusion_candidates.preliminary.wSpliceInfo died with ret 65280 at /opt/conda/lib/STAR-Fusion/PerlLib/Pipeliner.pm line 79.
+      Pipeliner::run(Pipeliner=HASH(0x14ed418)) called at /opt/conda/lib/STAR-Fusion/STAR-Fusion line 289
+
+</code></pre>
+</div>
+<p>On the last line you see there is a problem. This error nrmaly is a fucntion of RAM and the fact STAR-FUSION use two step mode for alignment.
+However  explore the result of pre-run sample. Please  open results.final
+Move on test_kickstart/:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd /home/um49/fusion/tutorial-fusion-transcript-2017/Results/STAR-FUSION/test_kickstart
+
+
+</code></pre>
+</div>
+
+<p>Explote the directory with ls:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**(root) um49@m49:~/fusion/tutorial-fusion-transcript-2017/Results/STAR-FUSION/test_kickstart$ ls**
+star-fusion.STAR-Fusion.predict.ok
+star-fusion.fusion_candidates.final
+star-fusion.fusion_candidates.preliminary
+star-fusion.fusion_candidates.preliminary.wSpliceInfo
+star-fusion.predict.intermediates_dir
+
+</code></pre>
+</div>
+<p>On <strong>star-fusion.fusion_candidates.final</strong> are reported all the fusion detect by STAR-FUSION:
+Look the first 10 reads:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>head star-fusion.fusion_candidates.final
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#FusionName JunctionReadCount SpanningFragCount SpliceType  LeftGene    LeftBreakpoint    Rig
+htGene      RightBreakpoint   JunctionReads     SpanningFrags     LargeAnchorSupport      LeftBreakDinuc    LeftBreakEntropy  RightBreakDinuc   RightBreakEntropy
+THRA--AC090627.1  28    93    ONLY_REF_SPLICE   THRA^ENSG00000126351.8  chr17:38243106:+  AC090627.1^
+ENSG00000235300.3 chr17:46371709:+  HWI-EAS418:3:95:1749:754,HWI-EAS418:3:54:203:1023,HWI-EAS418:5:35:1
+55:1130,HWI-EAS418:3:53:260:35,HWI-EAS418:5:16:64:1068,HWI-EAS418:3:82:1618:163,HWI-EAS418:5:99:101:324,HWI-EAS418:
+3:11:325:1032,HWI-EAS418:3:37:126:297,HWI-EAS418:6:93:26:596,HWI-EAS418:3:53:388:255,HWI-EAS418:5:32:704:1206,HWI-E
+AS418:6:85:691:681,HWI-EAS418:5:20:1228:1132,HWI-EAS418:3:47:1650:1419,HWI-EAS418:5:14:499:1741,HWI-EAS418:6:3:707:
+593,HWI-EAS418:5:45:1561:1639,HWI-EAS418:5:64:1516:1756,HWI-EAS418:5:4:875:1514,HWI-EAS418:5:89:1452:1503,HWI-EAS41
+8:6:39:877:1543,HWI-EAS418:3:31:1762:753,HWI-EAS418:5:68:968:1480,HWI-EAS418:3:94:453:1917,HWI-EAS418:5:5:1001:1845
+,HWI-EAS418:5:9:173:788,HWI-EAS418:3:57:171:49  HWI-EAS418:3:65:225:1696,HWI-EAS418:5:28:1103:1102,HWI-EAS418:6:24:
+1553:1579,HWI-EAS418:3:37:1174:256,HWI-EAS418:3:28:1180:1048,HWI-EAS418:3:41:709:320,HWI-EAS418:3:58:466:261,HWI-EA
+S418:3:7:1182:835,HWI-EAS418:3:83:1650:1325,HWI-EAS418:3:46:1299:691,HWI-EAS418:3:84:794:1201,HWI-EAS418:3:94:375:4
+67,HWI-EAS418:3:33:1322:82,HWI-EAS418:3:35:702:891,HWI-EAS418:3:63:773:641,HWI-EAS418:3:61:1319:752,HWI-EAS418:3:88
+:1179:1598,HWI-EAS418:5:56:1560:1267,HWI-EAS418:6:10:354:1000,HWI-EAS418:6:87:1171:1515,HWI-EAS418:5:41:160:762,HWI
+-EAS418:3:39:1768:1665,HWI-EAS418:3:54:1750:468,HWI-EAS418:3:99:1126:249,HWI-EAS418:3:99:499:40,HWI-EAS418:6:12:269
+:87,HWI-EAS418:5:10:233:504,HWI-EAS418:3:56:1742:1973,HWI-EAS418:3:56:1058:1165,HWI-EAS418:6:21:1096:711,HWI-EAS418
+:3:84:708:580,HWI-EAS418:6:97:184:1273,HWI-EAS418:3:14:1262:1127,HWI-EAS418:5:40:460:482,HWI-EAS418:3:28:923:1862,H
+WI-EAS418:3:87:1105:1160,HWI-EAS418:3:57:1619:1427,HWI-EAS418:3:21:1078:1775,HWI-EAS418:5:87:1225:275,HWI-EAS418:3:
+52:1017:1325,HWI-EAS418:6:88:553:1917,HWI-EAS418:3:25:1270:1038,HWI-EAS418:6:58:353:619,HWI-EAS418:3:69:612:734,HWI
+--More--(8%)
+
+
+</code></pre>
+</div>
+
+<p>How many fusion STAR-FUSION detect? Use awk for print the first column of the file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**awk  '{print  $1}' *.final**
+#FusionName
+THRA--AC090627.1
+THRA--AC090627.1
+ACACA--STAC2
+RPS6KB1--SNF8
+VAPB--IKZF3
+TOB1--SYNRG
+VAPB--IKZF3
+VAPB--IKZF3
+ZMYND8--CEP250
+AHCTF1--NAAA
+STX16--RAE1
+AHCTF1--NAAA
+STX16-NPEPL1--RAE1
+RAB22A--MYO9B
+MED1--ACSF2
+MED13--BCAS3
+MED1--STXBP4
+STARD3--DOK5
+MED13--BCAS3
+DIDO1--TTI1
+DIDO1--TTI1
+TRIM37--MYO19
+BRD4--RFX1
+TRPC4AP--MRPL45
+TRPC4AP--MRPL45
+GLB1--CMTM7
+PIP4K2B--RAD51C
+ASTN2--RP11-281A20.1
+
+
+</code></pre>
+</div>
+
+<h3 id="hands-on-complete-process-on-cloud">Hands On: Complete process on Cloud</h3>
+
+<p>Detect fusion on simulated rnaseq data. This step require at least  40G of RAM.This procedure was conducted on our server. Here I wrote the code only for teaching purpose. If we have time I’ll show you how works.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#Not run
+STAR-Fusion --genome_lib_dir reference/GRCh37_gencode_v19_CTAT_lib_July192017/
+--left_fq RAW/reads_50x_R1.fq.gz
+--right_fq RAW/reads_50x_R2.fq.gz
+--output_dir analysis/star-fusion/Sim_50x/
+
+</code></pre>
+</div>
+
+<p>This step we perform on our server. This is the results of the real run:</p>
+
+<p>Please check the result:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Aligned.sortedByCoord.out.bam         star-fusion.fusion_candidates.final
+Chimeric.out.bam                      star-fusion.fusion_candidates.final.abridged
+Chimeric.out.junction                 star-fusion.fusion_candidates.final.abridged.FFPM
+Chimeric.out.sam                      star-fusion.fusion_candidates.final.abridged.FFPM.ok
+star-fusion.fusion_candidates.preliminary.wSpliceInfo.ok
+igv.log                               star-fusion.predict.intermediates_dir
+Log.final.out                         star-fusion.STAR-Fusion.filter.ok
+Log.out                               star-fusion.STAR-Fusion.predict.ok
+Log.progress.out                      _STARgenome
+SJ.out.tab                            star.ok
+star-fusion.filter.intermediates_dir  _STARpass1
+
+</code></pre>
+</div>
+
+<p>Here you have only a small part of the ouput. This are present in your directory of the ouptut of STAR-FUSION results. Move on this directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/fusion/tutorial-fusion-transcript-2017/Results/STAR-FUSION/Sim_50x/
+</code></pre>
+</div>
+<p>Then look the directory using ls:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**ls -ltr**
+total 1748
+-rw-r--r-- 1 um49 student    6854 Sep  1 08:48 star-fusion.fusion_candidates.final.abridged.FFPM
+-rw-r--r-- 1 um49 student  714032 Sep  1 08:48 star-fusion.fusion_candidates.final
+-rw-r--r-- 1 um49 student       0 Sep  1 08:48 star.ok
+-rw-r--r-- 1 um49 student 1062022 Sep  1 08:48 star-fusion.fusion_candidates.preliminary
+</code></pre>
+</div>
+
+<p>Please  open  <strong>star-fusion.fusion_candidates.final</strong> and with the help of manual try to understand the meaning of the columns. <a href="https://github.com/STAR-Fusion/STAR-Fusion/wiki#Outputs">manual</a></p>
+
+<p><img src="http://localhost:4000/images/star_fusion.table.png" width="600" /></p>
+
+<p>Please open the fusion file and  extract the fusion genes names.</p>
+
+<pre><code class="language-`">(fusion) [centos@pol-produ Sim_50x]$ awk  '{print  $1}' *.final
+#FusionName
+THOC5--TNFRSF25
+SUPT4H1--RAC3
+ZNF691--C5orf45
+DRD2--OR4D11
+FUS--DDIT3
+YARS2--UBASH3B
+DCTN3--KIDINS220
+COCH--IDE
+SUPV3L1--PTPRN2
+PAX3--FOXO1
+FAT1--IL18BP
+ETV6--NTRK3
+EFCAB7--TRAF3IP3
+DBF4B--ESYT3
+EIF4G2--PRSS35
+ZNF311--ABCC1
+RORA--MTERFD3
+EFCAB11--HNRNPF
+KIAA1549--BRAF
+EMID1--EEF1D
+SLC6A19--DEAF1
+PSAT1--RBBP4
+BCLAF1--ABCA10
+ST3GAL5--NCKAP1L
+SLMAP--RFPL3
+ASB4--HMOX1
+ALDH7A1--TBC1D26
+ALDH7A1--ZNF286A
+ZNF628--ZC3H8
+MT-CO3--MT-ATP6
+ALDH7A1--ZNF286A
+MT-CO3--MT-ATP6
+MT-ND4--MT-ND4L
+MT-ND1--MT-RNR2
+MT-ND1--MT-TL1
+MTND4P12--MT-ND1
+RP11-444D3.1--SOX5
+RP11-96H19.1--RP11-446N19.1
+CRIM1--FEZ2
+NCOR2--UBC
+
+
+</code></pre>
+
+<h3 id="hands-on-3">Hands On (3)</h3>
+
+<p>Please  extract the reads of this fusion PAX3–FOXO1 coordinate.</p>
+
+<p>How to see  the junction files of the  fusion???
+Here I insert all the code we nee to run for create  the bam file of the chimeric reads. DO NOT RUN this.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ samtools view -bS Chimeric.out.sam &gt; Chimeric.out.bam 
+$ samtools sort Chimeric.out.bam Chimeric_sort
+$ samtools index Chimeric_sort.bam
+$ igvtools count Chimeric_sort.bam Chimeric_sort.bam.tdf ref_genome.fa
+</code></pre>
+</div>
+
+<p>To view the alignments supporting the fusion in IGV, click
+File-&gt;Open URL and copy/paste the following URL into
+the text box for PAX3</p>
+
+<p><code class="highlighter-rouge">http://www.scienziofilia.altervista.org/dati/Chimeric_sort.bam</code></p>
+
+<p>if you don’t have IGV please install in your comuter <a href="http://software.broadinstitute.org/software/igv/">link</a>
+Now you can search some spanning reads or encompassing reads.</p>
+
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  <!--<footer>
+        <p>This project is maintained by  Maurizio Polano<br/></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+-->
+  </body>
+</html>

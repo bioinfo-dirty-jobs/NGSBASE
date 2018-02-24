@@ -1,0 +1,21 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+# Setup
+title:               Training Course on Fusion transcript detection
+tagline:             Training Course on Fusion transcript detection
+description:         Fusion training
+url:                 'https://bioinfo-dirty-jobs.github.io/training_fusion/'
+baseurl:             '/training_fusion'
+twitter_username:
+github_username:  bioinfo-dirty-jobs
+pages_url: https://bioinfo-dirty-jobs.github.io/training_fusion/
+github_url: https://bioinfo-dirty-jobs.github.io/training_fusion/
+
+# Custom vars
+version:             1.2
+
+# Build settings
+markdown: kramdown
