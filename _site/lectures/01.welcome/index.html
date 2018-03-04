@@ -11,27 +11,27 @@
 
   <title>
     
-      Welcome and introduction &middot; Training Course on Fusion transcript detection
+      Welcome and introduction &middot; Training Course on Next generation sequencing
     
   </title>
 
   <!-- CSS -->
     <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="/training_fusion/public/css/poole.css">
-  <link rel="stylesheet" href="/training_fusion/public/css/syntax.css">
-  <link rel="stylesheet" href="/training_fusion/public/css/lanyon.css">
-  <link rel="stylesheet" href="/training_fusion/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
   <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/training_fusion/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="/training_fusion/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="/training_fusion/js/toc.js"></script>
+  <script src="/js/toc.js"></script>
 </head>
 
 
@@ -44,11 +44,11 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>Fusion training</p>
+    <p>NGS training</p>
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="/training_fusion/">Home</a>
+    <a class="sidebar-nav-item" href="/">Home</a>
 
     
 
@@ -68,50 +68,20 @@
     
       
         
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">General installation for Fusion detection tutorial</a>
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">Enviroment installation</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/03.jaffa/">Jaffa configuration</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/04.jaffa.tutorial/">Tutorial  jaffa program</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/05.starfusion/">STAR-FUSION configuration</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.starfusion.tutorial/">Tutorial star-fusion</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/07.exploration/">Hand on on exploration results</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/08.fusioncather/">Fusioncatcher</a>
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/03.linux_tutorial/">Linux tutorial</a>
         
       
     
 
-    <!--<a class="sidebar-nav-item" href="/archive/v1.2.zip">Download</a>-->
-    <a class="sidebar-nav-item" href="https://bioinfo-dirty-jobs.github.io/training_fusion/">GitHub project</a>
-    <span class="sidebar-nav-item">Currently v1.2</span>
+    <!--<a class="sidebar-nav-item" href="/archive/v2.0.zip">Download</a>-->
+    <a class="sidebar-nav-item" href="https://bioinfo-dirty-jobs.github.io/NGSBASE">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v2.0</span>
   </nav>
 
   <div class="sidebar-item">
@@ -128,7 +98,7 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="http://localhost:4000/" title="Home">Training Course on Fusion transcript detection</a>
+            <a href="http://localhost:4000/" title="Home">Training Course on Next generation sequencing</a>
             <!--<p></p><small>Welcome and introduction</small></p>-->
           </h3>
         </div>
@@ -163,9 +133,7 @@ $('#toc').on('click', 'a', function() {
   
   <h2 id="welcome">Welcome!</h2>
 
-<p>In this part of the course, we will present the main steps that are commonly used to process and to analyze cancer sequencing data for detect fusion transcript genes. We will focus on RNA-seq data and we will provide command lines that allow detecting fusions transcript genes using some of the most used programs.</p>
-
-<p><img src="http://localhost:4000/images/miniom.jpeg" width="600" /></p>
+<p>Welcome to this introductory course about <em>NGS data analysis</em>. During this course you will learn the basics of NGS data analysis in a Linux environment, current used software and best practices will be explained. This course is focused in NGS data alignment for both DNA and RNA (RNA-seq), variant calling, differential expression analysis and data visualization. This is course is scheduled for a 2 days and assumes a very basic knowledge of NGS data analysis and Linux. All materials in this is course are free and open.<a href="https://www.dropbox.com/sh/4qkqch7gyt888h7/AABD_i9ShwryfAqGeJ0yqqF3a">DropBox folder</a>.</p>
 
 <hr />
 <h3 id="learning-outcomes">Learning outcomes</h3>
@@ -173,22 +141,39 @@ $('#toc').on('click', 'a', function() {
 <p>After this course you should be able to:</p>
 
 <ul>
-  <li>install  an use  software for detect fusion transcript</li>
-  <li>understand the main process for detect fusion genes and detect some false positive</li>
-  <li>choose the right tools for the data you have</li>
+  <li>Start to move on linux system</li>
+  <li>Know the precincipal formts  use on  NGS</li>
+  <li>Evaluate quality and clean fastq</li>
+  <li>Map and visualize some alignment</li>
 </ul>
 
 <p>and you will be exposed to these software:</p>
 
 <ul>
-  <li><strong>STAR-FUSION</strong> [https://github.com/STAR-Fusion/STAR-Fusion/wiki]</li>
-  <li><strong>JAFFA</strong> [https://github.com/Oshlack/JAFFA/wiki]</li>
-  <li>Fusioncather [https://github.com/ndaniel/fusioncatcher]</li>
-  <li>PRADA [http://bioinformatics.mdanderson.org/main/PRADA:Overview]</li>
-  <li>Defuse [https://github.com/FusionInspector/FusionInspector]</li>
+  <li><strong>FASTC</strong> [https://www.bioinformatics.babraham.ac.uk/projects/fastqc/]</li>
+  <li><strong>SAMTOOLS</strong> [http://www.htslib.org/doc/samtools.html]</li>
+  <li><strong>bedtools</strong>[http://bedtools.readthedocs.io/en/latest/]</li>
+  <li><strong>bwa</strong>[http://bio-bwa.sourceforge.net/]</li>
+  <li><strong>bowtie2</strong> [http://bowtie-bio.sourceforge.net/bowtie2/index.shtml]</li>
+  <li><strong>multiQC</strong> [http://multiqc.info/]</li>
+  <li>STAR [https://github.com/alexdobin/STAR]</li>
+  <li>vt [https://genome.sph.umich.edu/wiki/Vt]</li>
+  <li>freebays [https://github.com/ekg/freebayes]</li>
+  <li>GATK [https://software.broadinstitute.org/gatk/]</li>
 </ul>
 
-<p>Jaffa can be tested in our enviromnt with 16G RAM. results (STAR-FUSION we can se the results usin my cluster).</p>
+<p>NGS data can be big, very big, huge! Biology is now a Big Data science
+There are not many web-based or graphical applications to perform analysis yet, sorry.
+Most tools developed to work on Linux, many command line programs
+How to work in NGS?</p>
+<ul>
+  <li>Small datasets (&lt;1TB): workstations</li>
+  <li>Medium sized datasets (&lt;100TB): clusters</li>
+  <li>Big datasets (100TB-20PB): big clusters and/or cloud based solutions</li>
+</ul>
+
+<p>Exercises during this course the NGS alignment will be done using the human chromosome 21 or MT as a reference genome. By doing this we can speed up exercises and avoid using too much memory. Under real circumstances, when using the standard reference genome, all the commands are exactly the same
+Software has been already installed to save time, so you are not expected to download and install all the software it is going to be used. However, it’s usually good to learn the basics of software installation in Linux, there is an optional session at the end of the first day for those that want to learn how to install NGS software in a standard Linux. We use conda for install most of the tools.</p>
 
 <p><img src="http://localhost:4000/images/p3.jpeg" width="600" /></p>
 
@@ -197,14 +182,15 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li>Next generation sequencing in general</li>
-  <li>RNA-seq</li>
-  <li>bash</li>
+  <li>Be patient</li>
 </ul>
+
+<p><img src="http://localhost:4000/images/patience.jpg" width="600" /></p>
 
 <hr />
 <h1 id="agenda">Agenda</h1>
 
-<p><em>*September 7</em></p>
+<p><em>*12 march</em></p>
 
 <table>
   <thead>
@@ -215,27 +201,30 @@ $('#toc').on('click', 'a', function() {
   </thead>
   <tbody>
     <tr>
-      <td><strong>Basic information</strong></td>
-      <td>Practical</td>
+      <td><strong>Introduction &amp; overview of NGS (RNA and DNA sequencing)</strong></td>
+      <td>Lecture</td>
     </tr>
     <tr>
-      <td><strong>JAFFA</strong></td>
-      <td>Introduction</td>
+      <td><strong>Introduction to Linux and R and command line interface</strong></td>
+      <td>Lecture / Practical</td>
     </tr>
     <tr>
-      <td><strong>JAFFA</strong></td>
-      <td>Practical</td>
-    </tr>
-    <tr>
-      <td><strong>Star-fusion</strong></td>
-      <td>Lecture/Pratical</td>
-    </tr>
-    <tr>
-      <td><strong>Exploration data from other softwares like defuse</strong></td>
-      <td>Practical</td>
+      <td><strong>NGS data format</strong></td>
+      <td>Lecture / Practical</td>
     </tr>
   </tbody>
 </table>
+
+<p><em>*13 march</em></p>
+
+<p>Title | Lecture/Practical
+——|——————-
+<strong>Bioinformatics approach (galaxy nextflow,and Ad hoc scripting)</strong> | Lecture /Practical
+<strong>RNASeq Analysis Workflow and planning (Quality Control, Alignment, Gene expression
+quantification, Differential expression analysis)</strong> | Lecture /Practical
+<strong>Exome and target sequencing workflow (alignment, SNP calling)</strong> | Practical
+<strong>ChIPSeq workflow</strong> | Lecture</p>
+
 
 </div>
 

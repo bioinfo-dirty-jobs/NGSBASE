@@ -1,7 +1,7 @@
-Fusion tutorial 2017
+NGS basic course 2018
 ===============
 
-This repository hosts a tutorials collection to support our courses on [Fusion transcript identification ](www.google.com)
+This repository hosts a tutorials collection to support our courses on [NGS base course ](www.google.com)
 
 ## Contributing
 

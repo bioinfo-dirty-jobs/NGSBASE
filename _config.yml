@@ -4,18 +4,18 @@
 permalink:           pretty
 
 # Setup
-title:               Training Course on Fusion transcript detection
-tagline:             Training Course on Fusion transcript detection
-description:         Fusion training
-url:                 'https://bioinfo-dirty-jobs.github.io/training_fusion/'
-baseurl:             '/training_fusion'
+title:               Training Course on Next generation sequencing
+tagline:             Training Course on Next generation sequencing
+description:         NGS training
+url:                 'https://bioinfo-dirty-jobs.github.io/NGSBASE'
+baseurl:             ''
 twitter_username:
 github_username:  bioinfo-dirty-jobs
-pages_url: https://bioinfo-dirty-jobs.github.io/training_fusion/
-github_url: https://bioinfo-dirty-jobs.github.io/training_fusion/
+pages_url: https://bioinfo-dirty-jobs.github.io/NGSBASE
+github_url: https://bioinfo-dirty-jobs.github.io/NGSBASE
 
 # Custom vars
-version:             1.2
+version:             2.0
 
 # Build settings
 markdown: kramdown

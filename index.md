@@ -4,7 +4,7 @@ title: Home
 ---
 
 ## Welcome to my tutorial          
-## [Training Course on RNA fusion detetections](https://bioinfo-dirty-jobs.github.io/training_fusion/)
+## [Training on Next generation sequencing ](https://bioinfo-dirty-jobs.github.io/NGSBASE/)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 ### Acknowledgement
  
-I would like to say thank you to  Gianmauro Cuccuru for the great help. I would also say thanks to Daniel Nicorici for the time spend to discus with me on the fusion genes.
+I would like to say thank you to  Gianmauro Cuccuru for the great help.
 
 ### Contributing
 
