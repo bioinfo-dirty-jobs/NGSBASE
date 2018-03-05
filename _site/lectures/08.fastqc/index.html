@@ -11,7 +11,7 @@
 
   <title>
     
-      Enviroment installation &middot; Training Course on Next generation sequencing
+      Quality Control and Data Preprocessing (I) &middot; Training Course on Next generation sequencing
     
   </title>
 
@@ -68,7 +68,7 @@
     
       
         
-          <a class="sidebar-nav-item active" href="http://localhost:4000/lectures/02.setup_tutorial/">Enviroment installation</a>
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/02.setup_tutorial/">Enviroment installation</a>
         
       
     
@@ -76,7 +76,7 @@
     
       
         
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/08.fastqc/">Quality Control and Data Preprocessing (I)</a>
+          <a class="sidebar-nav-item active" href="http://localhost:4000/lectures/08.fastqc/">Quality Control and Data Preprocessing (I)</a>
         
       
     
@@ -113,15 +113,15 @@
         <div class="container">
           <h3 class="masthead-title">
             <a href="http://localhost:4000/" title="Home">Training Course on Next generation sequencing</a>
-            <!--<p></p><small>Enviroment installation</small></p>-->
+            <!--<p></p><small>Quality Control and Data Preprocessing (I)</small></p>-->
           </h3>
         </div>
       </div>
 
       <div class="container content">
         <div class="page">
-  <h1 class="page-title">Enviroment installation</h1>
-  <p class="note">Comand line preparation enviroment for our tutorial.</p>
+  <h1 class="page-title">Quality Control and Data Preprocessing (I)</h1>
+  <p class="note">Quality Control and Data Preprocessing.</p>
   
     <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
@@ -145,82 +145,133 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
   
-  <h1 id="general-installation-for-fusion-detection-tutorial">General installation for Fusion detection tutorial</h1>
-<h2 id="links">Links</h2>
+  <h1 id="fastq-format">FastQ Format</h1>
+<p>================================================================================</p>
 
 <ul>
-  <li><a href="">Introduction  </a></li>
-  <li><a href="">Software requirements</a></li>
-  <li><a href="">Original Setup</a></li>
+  <li>Standard Format for NGS data</li>
+  <li>Conversion can be done from <em>sff</em>, <em>fasta + qual</em>, …</li>
+  <li>Extension of the Fasta format</li>
+  <li>Text-based formats (easy to use!)</li>
+  <li>If not compressed, it can be huge</li>
 </ul>
 
-<hr />
+<p>\</p>
 
-<hr />
-<h2 id="introduction">Introduction</h2>
+<p><a href="http://en.wikipedia.org/wiki/FASTQ_format">http://en.wikipedia.org/wiki/FASTQ_format</a></p>
 
-<p>All the softwares are already installed on your virtual machine. If you need assistance please let  me know.
-You can install in your PC follow this tutorial</p>
-<h4 id="setting-up-anaconda">Setting up Anaconda</h4>
-<p>Anaconda is an environment and package manager for Python and it makes installation, environment management, etc. simple without requiring root or administrator privileges.  Fortunately, its framework has been leveraged for a project called bioconda that extends these capabailities to external programs as well.  All of the packages and programs we’re using today can easily be installed with Anaconda/bioconda with the following steps:</p>
+<h1 id="quality-measurements">Quality measurements</h1>
+<p>================================================================================</p>
+
+<p>Base-calling <strong>error probabilities</strong> are reported by sequencers.</p>
+
+<p>Usually in <strong>Phred</strong> (quality) score.</p>
+
+<p>Usually coded by ASCII characters</p>
+
+<h2 id="phred-score">Phred score</h2>
+
+<script type="math/tex; mode=display">Q = -10 log_{10} P</script>
+
+<script type="math/tex; mode=display">P = 10^{\frac{-Q}{10}}</script>
+
+<p>\</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Phred_quality_score#Definition">http://en.wikipedia.org/wiki/Phred_quality_score</a></p>
+
+<h1 id="ngs-data-preprocessing-steps">NGS Data Preprocessing Steps</h1>
+<p>================================================================================</p>
 
 <ul>
+  <li>File parsing: convert to <strong>fastq</strong> format form <strong>sff</strong>, <strong>fasta</strong> + <strong>qual</strong> …</li>
   <li>
-    <p>First, install Miniconda version 3.5 <a href="http://conda.pydata.org/miniconda.html">available here</a>.  During installation, be sure to allow miniconda to append to your .bashrc or .bash_profile (this will add it and all programs it installs to your PATH).  If installation goes well, the command <code class="highlighter-rouge">which python</code> should result in something like <code class="highlighter-rouge">/Users/&lt;yourusername&gt;/anaconda/bin/python</code> or <code class="highlighter-rouge">/home/&lt;yourusername&gt;/anaconda/bin/python</code></p>
-  </li>
-  <li>Add bioconda channels to conda with the following commands:
-    <div class="highlighter-rouge"><pre class="highlight"><code>conda config --add channels r
-conda config --add channels conda-forge
-conda config --add channels bioconda
-</code></pre>
-    </div>
+    <p>Split <a href="http://www.illumina.com/technology/multiplexing_sequencing_assay.ilmn" title="Multiplex Sequencing Assay">multiplex</a> samples.</p>
   </li>
   <li>
-    <p>Create the environment we’ll be working in and install required packages with the command:</p>
+    <p>Quality Control of the raw data.</p>
+  </li>
+  <li>Filtering and trimming reads by quality.</li>
+  <li>
+    <p>Adapter trimming</p>
+  </li>
+  <li>Quality Control of the trimmed and filtered reads</li>
+</ul>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>conda create --name NGSBASE python=3.6 snakemake fastqc bwa samtools picard freebayes bcftools snpsift
-</code></pre>
-    </div>
-    <p>or</p>
-    <div class="highlighter-rouge"><pre class="highlight"><code> git clone https://github.com/bioinfo-dirty-jobs/Data
- cd Data
- conda env create -f ngsbase.yml
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Load the new environment and add the samblaster package</p>
+<h1 id="software">Software</h1>
+<p>================================================================================</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>source activate NGSBASE
-conda install -c biobuilds samblaster
-</code></pre>
-    </div>
+<ul>
+  <li><strong>FastQC</strong>:
+    <ul>
+      <li>quality control</li>
+      <li>some filtering …</li>
+    </ul>
   </li>
 </ul>
 
-<p>This will create a working environment called NGSBASE containing python 3.5 (python 3 is required for snakemake) and all of the tools listed in the command.  You can see the full list of programs available through bioconda <a href="https://bioconda.github.io/">listed here</a> and the full list of python packages available through Anaconda <a href="https://docs.continuum.io/anaconda/pkg-docs">listed here</a>.</p>
+<p><a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc">www.bioinformatics.babraham.ac.uk/projects/fastqc</a></p>
 
-<p>If you want to load our new environment, you can do so with the command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>source activate NGSBASE
-</code></pre>
-</div>
-<p>and leave the environment with the command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>source deactivate
-</code></pre>
-</div>
+<p>\</p>
 
-<p>If you’re in your environment, you can easily add additional programs (like we did for multiqc) and packages with the command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>conda install &lt;program/package name&gt;
-</code></pre>
-</div>
+<ul>
+  <li><strong>Cutadapt</strong>:
+    <ul>
+      <li>adapter trimming</li>
+      <li>filter reads by length (short, long)</li>
+      <li>filter reads by quality</li>
+    </ul>
+  </li>
+</ul>
 
-<p>For example, if we also want to take a look at Bowtie2, another read mapper (we’ll use bwa today), we can easily add it by entering our environment
-				<code class="highlighter-rouge">source activate NGSBASE</code>
-and typing 
-				<code class="highlighter-rouge">conda install bowtie2</code></p>
+<p><a href="http://code.google.com/p/cutadapt">http://code.google.com/p/cutadapt</a></p>
 
-<hr />
+<!-- FastQC Images -->
 
+<h1 id="per-base-sequence-quality">Per Base Sequence Quality</h1>
+<p><img src="images/per_base_quality" alt="" /></p>
+
+<h1 id="per-sequence-quality">Per Sequence Quality</h1>
+<p><img src="images/per_sequence_quality" alt="" /></p>
+
+<h1 id="per-base-sequence-content">Per Base Sequence Content</h1>
+<p><img src="images/per_base_sequence_content" alt="" /></p>
+
+<h1 id="per-base-gc-content">Per Base GC Content</h1>
+<p><img src="images/per_base_gc_content" alt="" /></p>
+
+<h1 id="per-sequence-nucleotide-content">Per Sequence Nucleotide Content</h1>
+<p><img src="images/per_sequence_gc_content" alt="" /></p>
+
+<h1 id="per-base-n-content">Per Base N Content</h1>
+<p><img src="images/per_base_n_content" alt="" /></p>
+
+<h1 id="sequence-length-distribution">Sequence Length Distribution</h1>
+<p><img src="images/sequence_length_distribution" alt="" /></p>
+
+<h1 id="duplicate-sequences-distribution">Duplicate Sequences Distribution</h1>
+<p><img src="images/duplication_levels" alt="" /></p>
+
+<h1 id="over-represented-kmers">Over-represented Kmers</h1>
+<p><img src="images/kmer_profiles" alt="" /></p>
+
+<h1 id="more-fastq-examples-and-documentation">More FastQ examples and documentation</h1>
+
+<p>… may be found at <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQ home page</a></p>
+
+<ul>
+  <li>Example Reports</li>
+</ul>
+
+<h1 id="sequencing-process-pcr-primers">Sequencing process: PCR primers</h1>
+
+<p><img src="images/pcr_adaptors.png" alt="" /></p>
+
+<h1 id="sequencing-process-pcr-primers-1">Sequencing process: PCR primers</h1>
+
+<p><img src="images/illumina_cluster_generation.png" alt="" /></p>
+
+<h1 id="ngs-adaptors-and-cutadapt">NGS adaptors and Cutadapt</h1>
+<p><img src="images/adaptors.png" alt="" /></p>
 
 </div>
 
