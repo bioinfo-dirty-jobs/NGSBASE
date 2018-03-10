@@ -17,21 +17,21 @@
 
   <!-- CSS -->
     <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="/NGSBASE/public/css/poole.css">
-  <link rel="stylesheet" href="/NGSBASE/public/css/syntax.css">
-  <link rel="stylesheet" href="/NGSBASE/public/css/lanyon.css">
-  <link rel="stylesheet" href="/NGSBASE/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
   <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/NGSBASE/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="/NGSBASE/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="/NGSBASE/js/toc.js"></script>
+  <script src="/js/toc.js"></script>
 </head>
 
 
@@ -48,7 +48,7 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="/NGSBASE/">Home</a>
+    <a class="sidebar-nav-item" href="/">Home</a>
 
     
 
@@ -88,7 +88,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.bioinformatics_pipeline/">Bioinformatics approac examples</a>
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.bioinformatics_pipeline/">Bioinformatics approach examples</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/07.rnaseq_pipeline/">RNA-Seq data analysis</a>
         
       
     
@@ -153,33 +159,49 @@ $('#toc').on('click', 'a', function() {
   
   <h2 id="welcome">Welcome!</h2>
 
-<p>Welcome to this introductory course about <em>NGS data analysis</em>. During this course you will learn the basics of NGS data analysis in a Linux environment, current used software and best practices will be explained. This course is focused in NGS data alignment for both DNA and RNA (RNA-seq), variant calling, differential expression analysis and data visualization. This is course is scheduled for a 2 days and assumes a very basic knowledge of NGS data analysis and Linux. All materials in this is course are free and open.<a href="https://www.dropbox.com/sh/4qkqch7gyt888h7/AABD_i9ShwryfAqGeJ0yqqF3a">DropBox folder</a>.</p>
+<p>Welcome to this introductory course about <em>NGS data analysis</em>. During this course you will learn the basics of NGS data analysis in a Linux environment, current used software and best practices will be explained.
+This course is focused in NGS data alignment for both DNA and RNA (RNA-seq), variant calling, differential expression analysis and data visualization.
+This is course is scheduled for a 2 days and assumes a very basic knowledge of NGS data analysis and Linux.
+All materials in this is course are free and open and derived from some pulic avaible online course.</p>
 
-<hr />
+<p><a href="https://www.dropbox.com/sh/4qkqch7gyt888h7/AABD_i9ShwryfAqGeJ0yqqF3a">DropBox folder</a></p>
+
+<p><a href="https://drive.google.com/open?id=1ywFJ9OyKn0Bo9AhxX2nUuKC3Fr4wLdL6">data</a></p>
+
+<p><a href="">data2</a></p>
+
+<p>Here you can found and Interesting video that explain NGS sequincing</p>
+
+<h2><a href="https://www.youtube.com/watch?v=MvuYATh7Y74"><img src="https://www.youtube.com/watch?v=MvuYATh7Y74/0.jpg" alt="Sequencing" /></a></h2>
 <h3 id="learning-outcomes">Learning outcomes</h3>
 
 <p>After this course you should be able to:</p>
 
 <ul>
   <li>Start to move on linux system</li>
-  <li>Know the precincipal formts  use on  NGS</li>
+  <li>Know the precincipal formats  use on  NGS</li>
   <li>Evaluate quality and clean fastq</li>
   <li>Map and visualize some alignment</li>
+  <li>Know some base of analisys</li>
 </ul>
 
 <p>and you will be exposed to these software:</p>
 
 <ul>
-  <li><strong>FASTC</strong> [https://www.bioinformatics.babraham.ac.uk/projects/fastqc/]</li>
-  <li><strong>SAMTOOLS</strong> [http://www.htslib.org/doc/samtools.html]</li>
-  <li><strong>bedtools</strong>[http://bedtools.readthedocs.io/en/latest/]</li>
-  <li><strong>bwa</strong>[http://bio-bwa.sourceforge.net/]</li>
-  <li><strong>bowtie2</strong> [http://bowtie-bio.sourceforge.net/bowtie2/index.shtml]</li>
-  <li><strong>multiQC</strong> [http://multiqc.info/]</li>
-  <li>STAR [https://github.com/alexdobin/STAR]</li>
-  <li>vt [https://genome.sph.umich.edu/wiki/Vt]</li>
-  <li>freebays [https://github.com/ekg/freebayes]</li>
-  <li>GATK [https://software.broadinstitute.org/gatk/]</li>
+  <li><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FASTC</a></li>
+  <li><a href="http://www.htslib.org/doc/samtools.html">SAMTOOLS</a></li>
+  <li><a href="http://bedtools.readthedocs.io/en/latest/">bedtools</a></li>
+  <li><a href="http://bio-bwa.sourceforge.net/">bwa</a></li>
+  <li><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a></li>
+  <li><a href="http://multiqc.info/">multiQC</a></li>
+  <li><a href="https://github.com/alexdobin/STAR">STAR</a></li>
+  <li><a href="https://genome.sph.umich.edu/wiki/Vt">vt</a></li>
+  <li><a href="https://github.com/ekg/freebayes">freebays</a></li>
+  <li><a href="https://software.broadinstitute.org/gatk/">GATK</a></li>
+  <li><a href="https://www.nextflow.io/">NEXTFLOW</a></li>
+  <li><a href="https://pachterlab.github.io/kallisto/about">KALLISTO</a></li>
+  <li><a href="https://github.com/pachterlab/sleuth">SLEUTH</a></li>
+  <li><a href="https://broadinstitute.github.io/picard/">picards</a></li>
 </ul>
 
 <p>NGS data can be big, very big, huge! Biology is now a Big Data science

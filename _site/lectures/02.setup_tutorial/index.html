@@ -17,21 +17,21 @@
 
   <!-- CSS -->
     <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="/NGSBASE/public/css/poole.css">
-  <link rel="stylesheet" href="/NGSBASE/public/css/syntax.css">
-  <link rel="stylesheet" href="/NGSBASE/public/css/lanyon.css">
-  <link rel="stylesheet" href="/NGSBASE/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
   <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/NGSBASE/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="/NGSBASE/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="/NGSBASE/js/toc.js"></script>
+  <script src="/js/toc.js"></script>
 </head>
 
 
@@ -48,7 +48,7 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="/NGSBASE/">Home</a>
+    <a class="sidebar-nav-item" href="/">Home</a>
 
     
 
@@ -88,7 +88,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.bioinformatics_pipeline/">Bioinformatics approac examples</a>
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/06.bioinformatics_pipeline/">Bioinformatics approach examples</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/lectures/07.rnaseq_pipeline/">RNA-Seq data analysis</a>
         
       
     
@@ -127,7 +133,7 @@
       <div class="container content">
         <div class="page">
   <h1 class="page-title">Enviroment installation</h1>
-  <p class="note">Comand line preparation enviroment for our tutorial.</p>
+  <p class="note">Command line preparation enviroment for our tutorial.</p>
   
     <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
@@ -151,22 +157,12 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
   
-  <h1 id="general-installation-for-fusion-detection-tutorial">General installation for Fusion detection tutorial</h1>
-<h2 id="links">Links</h2>
-
-<ul>
-  <li><a href="">Introduction  </a></li>
-  <li><a href="">Software requirements</a></li>
-  <li><a href="">Original Setup</a></li>
-</ul>
-
+  <h1 id="general-installation-configuration-our-machines">General installation configuration our machines</h1>
 <hr />
-
-<hr />
-<h2 id="introduction">Introduction</h2>
-
+<h2 id="introduction">INTRODUCTION</h2>
 <p>All the softwares are already installed on your virtual machine. If you need assistance please let  me know.
 You can install in your PC follow this tutorial</p>
+
 <h4 id="setting-up-anaconda">Setting up Anaconda</h4>
 <p>Anaconda is an environment and package manager for Python and it makes installation, environment management, etc. simple without requiring root or administrator privileges.  Fortunately, its framework has been leveraged for a project called bioconda that extends these capabailities to external programs as well.  All of the packages and programs we’re using today can easily be installed with Anaconda/bioconda with the following steps:</p>
 
@@ -175,55 +171,61 @@ You can install in your PC follow this tutorial</p>
     <p>First, install Miniconda version 3.5 <a href="http://conda.pydata.org/miniconda.html">available here</a>.  During installation, be sure to allow miniconda to append to your .bashrc or .bash_profile (this will add it and all programs it installs to your PATH).  If installation goes well, the command <code class="highlighter-rouge">which python</code> should result in something like <code class="highlighter-rouge">/Users/&lt;yourusername&gt;/anaconda/bin/python</code> or <code class="highlighter-rouge">/home/&lt;yourusername&gt;/anaconda/bin/python</code></p>
   </li>
   <li>Add bioconda channels to conda with the following commands:
-    <div class="highlighter-rouge"><pre class="highlight"><code>conda config --add channels r
-conda config --add channels conda-forge
-conda config --add channels bioconda
+    <div class="highlighter-rouge"><pre class="highlight"><code>  conda config --add channels r
+  conda config --add channels conda-forge
+  conda config --add channels bioconda
 </code></pre>
     </div>
   </li>
   <li>
     <p>Create the environment we’ll be working in and install required packages with the command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>conda create --name NGSBASE python=3.6 snakemake fastqc bwa samtools picard freebayes bcftools snpsift
+    <div class="highlighter-rouge"><pre class="highlight"><code>      conda create --name NGSBASE python=3.6 snakemake fastqc bwa samtools picard freebayes bcftools snpsift
 </code></pre>
     </div>
     <p>or</p>
-    <div class="highlighter-rouge"><pre class="highlight"><code> git clone https://github.com/bioinfo-dirty-jobs/Data
- cd Data
- conda env create -f ngsbase.yml
+    <div class="highlighter-rouge"><pre class="highlight"><code>   git clone https://github.com/bioinfo-dirty-jobs/Data
+   cd Data
+   conda env create -f ngsbase.yml
 </code></pre>
     </div>
   </li>
   <li>
     <p>Load the new environment and add the samblaster package</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>source activate NGSBASE
-conda install -c biobuilds samblaster
+    <div class="highlighter-rouge"><pre class="highlight"><code>  source activate NGSBASE
+  conda install -c biobuilds samblaster
 </code></pre>
     </div>
   </li>
 </ul>
 
-<p>This will create a working environment called NGSBASE containing python 3.5 (python 3 is required for snakemake) and all of the tools listed in the command.  You can see the full list of programs available through bioconda <a href="https://bioconda.github.io/">listed here</a> and the full list of python packages available through Anaconda <a href="https://docs.continuum.io/anaconda/pkg-docs">listed here</a>.</p>
+<p>This will create a working environment called NGSBASE containing python 3.6 (python 3 is required for snakemake) and all of the tools listed in the command.  You can see the full list of programs available through bioconda <a href="https://bioconda.github.io/">listed here</a> and the full list of python packages available through Anaconda <a href="https://docs.continuum.io/anaconda/pkg-docs">listed here</a>.</p>
 
 <p>If you want to load our new environment, you can do so with the command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>source activate NGSBASE
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    source activate NGSBASE
 </code></pre>
 </div>
 <p>and leave the environment with the command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>source deactivate
+<div class="highlighter-rouge"><pre class="highlight"><code>    source deactivate
+    
 </code></pre>
 </div>
 
 <p>If you’re in your environment, you can easily add additional programs (like we did for multiqc) and packages with the command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>conda install &lt;program/package name&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>    conda install &lt;program/package name&gt;
 </code></pre>
 </div>
 
 <p>For example, if we also want to take a look at Bowtie2, another read mapper (we’ll use bwa today), we can easily add it by entering our environment
-				<code class="highlighter-rouge">source activate NGSBASE</code>
+				<code class="highlighter-rouge">  source activate NGSBASE</code>
 and typing 
 				<code class="highlighter-rouge">conda install bowtie2</code></p>
+
+<h2 id="vmware">VMWARE</h2>
+<p>Please install <a href="https://www.vmware.com/products/workstation-player.html">VMWARE PLAYER</a>
+Run the machine and modify the configurations for you PC.</p>
 
 <hr />
 
