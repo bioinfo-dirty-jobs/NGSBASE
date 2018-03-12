@@ -29,11 +29,33 @@ both you and collaborators to figure out exactly where and what everything is. A
 named. For example, processing 300 gene sequences stored in separate FASTA files
 with a script is trivial if these files are organized in a single directory and are consistently named.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>                       [explain my command ](https://explainshell.com/) All files and directories used in your project should live in a single project directory with a clear name. During the course of a project, you’ll have amassed data files, notes, scripts, and so on if these were scattered all over your hard drive (or worse, across many computers’ hard drives), it would be a nightmare to keep track of every‐ thing. Even worse, such a disordered project would later make your research nearly impossible to reproduce. In addition to having a well-organized directory structure, your bioinformatics project also should be well documented. Poor documentation can lead to irreproduci‐ bility and serious errors.  - Document your methods and workflows  - Document the origin of all data in your project directory  - Document when you downloaded data  - Record data version information  - Describe how you downloaded the data  - Document the versions of the software that you ran  ```
-$ echo dog-{gone,bowl,bark}
-	dog-gone dog-bowl dog-bark  ``` Create Project
+<div class="highlighter-rouge"><pre class="highlight"><code>                       [explain my command ](https://explainshell.com/)
 </code></pre>
 </div>
+
+<p>All files and directories used in your project should live in a single project directory
+with a clear name. During the course of a project, you’ll have amassed data files,
+notes, scripts, and so on if these were scattered all over your hard drive (or worse,
+across many computers’ hard drives), it would be a nightmare to keep track of every‐
+thing. Even worse, such a disordered project would later make your research nearly
+impossible to reproduce.
+In addition to having a well-organized directory structure, your bioinformatics
+project also should be well documented. Poor documentation can lead to irreproduci‐
+bility and serious errors.</p>
+<ul>
+  <li>Document your methods and workflows</li>
+  <li>Document the origin of all data in your project directory</li>
+  <li>Document when you downloaded data</li>
+  <li>Record data version information</li>
+  <li>Describe how you downloaded the data</li>
+  <li>Document the versions of the software that you ran
+    <div class="highlighter-rouge"><pre class="highlight"><code> $ echo dog-{gone,bowl,bark}
+     dog-gone dog-bowl dog-bark
+</code></pre>
+    </div>
+    <p>Create Project</p>
+  </li>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>	$ mkdir Analisi_12march2018/{RAW,Scripts,quality}
 	$ tree Analisi_12march2018/
